@@ -64,7 +64,7 @@ class MastodonConnector(BaseConnector):
             hashtags=sorted(set(hashtags + extract_hashtags(text))),
             keywords=keywords,
             engagement_raw=engagement,
-            metadata={"visibility": payload.get("visibility")},
+            metadata=self.metadata({"visibility": payload.get("visibility")}),
         )
 
     async def _lookup_account(self) -> Dict[str, Any]:

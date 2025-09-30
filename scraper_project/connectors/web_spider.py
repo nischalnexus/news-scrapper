@@ -87,7 +87,7 @@ class WebSpiderConnector(BaseConnector):
             hashtags=hashtags,
             keywords=keywords,
             engagement_raw=Engagement(),
-            metadata={"tags": self.source.tags},
+            metadata=self.metadata(),
         )
 
     @property

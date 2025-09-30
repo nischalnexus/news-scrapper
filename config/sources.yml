@@ -5,8 +5,8 @@ sources:
   - type: web
     url: https://techcrunch.com/
     crawl:
-      depth: 0
-      max_pages: 5
+      depth: 1
+      max_pages: 15
       render: false
     tags: [news, web]
   - type: mastodon

@@ -1,3 +1,4 @@
+categories_path: "top100_tech_feeds_4cats.csv"
 fetch:
   user_agent: "OpenScraper/1.0 (+contact@example.com)"
   max_concurrency: 10

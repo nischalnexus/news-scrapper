@@ -30,3 +30,4 @@ streamlit_server.log.err
 # OS files
 Thumbs.db
 .DS_Store
+_scrape_test_logs/

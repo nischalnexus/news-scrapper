@@ -24,8 +24,12 @@ class RSSFeedConnector(BaseConnector):
         headers = {"User-Agent": "OpenScraper/1.0"}
         timeout = httpx.Timeout(30.0)
         async with httpx.AsyncClient(timeout=timeout, headers=headers) as client:
-            response = await client.get(str(self.source.url))
-            response.raise_for_status()
+            try:
+                response = await client.get(str(self.source.url))
+                response.raise_for_status()
+            except httpx.HTTPError as exc:
+                get_logger(__name__).warning("RSS fetch failed", extra={"url": str(self.source.url), "error": str(exc)})
+                return
         parsed = feedparser.parse(response.text)
         for entry in parsed.entries:
             yield {"feed": parsed.feed, "entry": entry}
@@ -62,5 +66,5 @@ class RSSFeedConnector(BaseConnector):
             hashtags=hashtags,
             keywords=keywords,
             engagement_raw=Engagement(),
-            metadata={"tags": self.source.tags},
+            metadata=self.metadata(),
         )

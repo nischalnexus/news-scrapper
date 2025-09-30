@@ -18,6 +18,8 @@ class SourceConfig(BaseModel):
     handle: Optional[str] = Field(None, description="Mastodon account handle")
     path: Optional[str] = Field(None, description="Path component for Reddit or web connectors")
     tags: List[str] = Field(default_factory=list, description="Optional tags to attach to generated items")
+    brand_name: Optional[str] = Field(None, description="Human-friendly source label")
+    category: Optional[str] = Field(None, description="Category grouping label")
     fetch_interval_minutes: int = Field(60, ge=5, description="Suggested refresh cadence in minutes")
 
 
@@ -52,6 +54,7 @@ class Settings(BaseModel):
     fetch: FetchSettings = Field(default_factory=FetchSettings)
     storage: StorageSettings = Field(default_factory=StorageSettings)
     scoring: ScoringSettings = Field(default_factory=ScoringSettings)
+    categories_path: Optional[str] = Field("top100_tech_feeds_4cats.csv", description="Path to site/category catalog (csv or xlsx)")
 
 
 class Engagement(BaseModel):

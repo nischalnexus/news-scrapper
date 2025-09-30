@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import sys
+import json
 from urllib.parse import urlparse
 import html
 import re
@@ -19,6 +20,16 @@ import streamlit as st
 from scraper_project.config import load_settings
 from scraper_project.pipeline.runner import ingest_async
 from scraper_project.pipeline.storage import load_dataframe, write_items
+
+from scraper_project.utils.categories import (
+    ensure_category_row,
+    load_catalog_table,
+    load_category_map,
+    remove_catalog_category,
+    remove_catalog_entries,
+    save_catalog_table,
+    upsert_catalog_entry,
+)
 
 def _brand_from_url(url: str) -> str:
     if not isinstance(url, str):
@@ -79,6 +90,36 @@ def _clean_text_cell(value: object) -> str:
     text_value = html.unescape(str(value))
     cleaned = _TAG_RE.sub("", text_value)
     return cleaned.strip()
+
+
+def _parse_metadata_cell(value: object) -> dict[str, object]:
+    if isinstance(value, dict):
+        return value
+    if isinstance(value, str):
+        payload = value.strip()
+        if not payload:
+            return {}
+        try:
+            parsed = json.loads(payload)
+            if isinstance(parsed, dict):
+                return parsed
+        except json.JSONDecodeError:  # pragma: no cover - defensive parsing
+            return {}
+    return {}
+
+
+def _metadata_tags(meta: dict[str, object]) -> str:
+    tags = meta.get("tags")
+    if isinstance(tags, list):
+        return ",".join(str(tag) for tag in tags)
+    if isinstance(tags, str):
+        return tags
+    return ""
+
+
+def _category_label(value: str | None) -> str:
+    return value or "Uncategorized"
+
 
 def _styled_scores_table(table: pd.DataFrame) -> pd.DataFrame:
     display = table.copy()
@@ -145,6 +186,97 @@ limit = st.sidebar.slider("Rows to load", 100, 10000, 1000, step=100)
 
 cfg = load_settings(sources_path, settings_path)
 
+catalog_path = getattr(cfg, "categories_path", None)
+catalog_df = load_catalog_table(catalog_path)
+
+raw_category_values = set()
+has_uncategorized = False
+for source in cfg.sources:
+    value = getattr(source, "category", None)
+    if value:
+        raw_category_values.add(str(value))
+    else:
+        has_uncategorized = True
+
+if not catalog_df.empty:
+    catalog_categories = catalog_df["Category"].astype(str).str.strip()
+    raw_category_values.update(cat for cat in catalog_categories if cat)
+    if (catalog_categories == "").any():
+        has_uncategorized = True
+
+category_options = sorted(raw_category_values)
+if has_uncategorized:
+    if "Uncategorized" not in category_options:
+        category_options.append("Uncategorized")
+if not category_options:
+    category_options = ["Uncategorized"]
+prev_category_selection = st.session_state.get("category_filter_selection")
+if prev_category_selection:
+    category_default = [value for value in prev_category_selection if value in category_options]
+    if not category_default:
+        category_default = category_options
+else:
+    category_default = category_options
+category_filter_selection = st.sidebar.multiselect("Categories", category_options, default=category_default)
+selected_categories = category_filter_selection or category_options
+
+if catalog_path:
+    with st.sidebar.expander("Manage categories & sites"):
+        st.caption(f"Catalog file: {Path(catalog_path).name}")
+        st.markdown("Add or update websites for each category.")
+        new_category_input = st.text_input("Category name", key="catalog_category_name")
+        new_brand_input = st.text_input("Brand / source name", key="catalog_brand_name")
+        new_url_input = st.text_input("Website URL", key="catalog_site_url")
+        manage_cols = st.columns(2)
+        with manage_cols[0]:
+            if st.button("Add / Update site", key="catalog_add_site_btn"):
+                try:
+                    updated_catalog = upsert_catalog_entry(catalog_df, new_brand_input, new_url_input, new_category_input)
+                except ValueError as exc:
+                    st.warning(str(exc))
+                else:
+                    save_catalog_table(updated_catalog, catalog_path)
+                    load_category_map.cache_clear()
+                    st.success("Catalog updated.")
+                    st.experimental_rerun()
+        with manage_cols[1]:
+            if st.button("Add category", key="catalog_add_category_btn"):
+                if not new_category_input.strip():
+                    st.warning("Provide a category name to add.")
+                else:
+                    updated_catalog = ensure_category_row(catalog_df, new_category_input)
+                    save_catalog_table(updated_catalog, catalog_path)
+                    load_category_map.cache_clear()
+                    st.success("Category added.")
+                    st.experimental_rerun()
+        existing_categories = sorted({cat for cat in catalog_df["Category"].astype(str).str.strip() if cat})
+        if existing_categories:
+            delete_category_choice = st.selectbox("Select category", options=existing_categories, key="catalog_delete_category_select")
+            category_rows = catalog_df[catalog_df["Category"].astype(str).str.lower() == delete_category_choice.lower()]
+            site_options = {
+                f"{(row['Brand Name'] or row['URL'])} ({row['URL']})": row['URL']
+                for _, row in category_rows.iterrows()
+                if str(row.get('URL', '')).strip()
+            }
+            selected_sites_to_delete = st.multiselect("Websites to delete", list(site_options.keys()), key="catalog_delete_sites_select")
+            if st.button("Delete selected sites", key="catalog_delete_sites_btn"):
+                updated_catalog = remove_catalog_entries(catalog_df, [site_options[label] for label in selected_sites_to_delete])
+                save_catalog_table(updated_catalog, catalog_path)
+                load_category_map.cache_clear()
+                st.success("Selected sites removed.")
+                st.experimental_rerun()
+            if st.button("Delete category", key="catalog_delete_category_btn"):
+                updated_catalog = remove_catalog_category(catalog_df, delete_category_choice)
+                save_catalog_table(updated_catalog, catalog_path)
+                load_category_map.cache_clear()
+                st.success("Category removed.")
+                st.experimental_rerun()
+        else:
+            st.info("No categories defined yet; add one above.")
+else:
+    st.sidebar.info("Set a catalog path in settings to manage categories.")
+
+
 stored_filters = st.session_state.get("filters_apply", {})
 keyword_default = st.session_state.get("keyword_filter", "")
 hashtag_default = st.session_state.get("hashtag_filter", "")
@@ -177,9 +309,20 @@ if st.sidebar.button("Apply"):
     }
     st.session_state["keyword_filter"] = keyword_filter
     st.session_state["hashtag_filter"] = hashtag_filter
+    st.session_state["category_filter_selection"] = selected_categories
     try:
+        effective_categories = set(selected_categories or category_options)
+        sources_for_ingest = [
+            source
+            for source in cfg.sources
+            if _category_label(getattr(source, "category", None)) in effective_categories
+        ]
+        if not sources_for_ingest:
+            raise RuntimeError("No sources match the selected categories.")
+        cfg_ingest = cfg.model_copy(deep=True)
+        cfg_ingest.sources = sources_for_ingest
         with st.spinner("Fetching fresh content..."):
-            _ingest_and_store(cfg, ingest_hours)
+            _ingest_and_store(cfg_ingest, ingest_hours)
         st.session_state["ingest_success"] = True
     except Exception as exc:  # pragma: no cover - defensive UI handling
         st.session_state["ingest_error"] = str(exc)
@@ -199,6 +342,13 @@ if df.empty:
 
 now_utc = pd.Timestamp.now(tz="UTC")
 
+metadata_series = pd.Series([{}] * len(df), index=df.index)
+if "metadata" in df.columns:
+    metadata_series = df["metadata"].apply(_parse_metadata_cell)
+df["category"] = metadata_series.apply(lambda meta: _category_label(meta.get("category")))
+df["source_tags"] = metadata_series.apply(_metadata_tags)
+brand_from_meta = metadata_series.apply(lambda meta: (meta.get("brand_name") or "").strip())
+
 if "published_at" in df.columns:
     df["published_at"] = pd.to_datetime(df["published_at"], errors="coerce", utc=True)
     df["published_hour"] = df["published_at"].dt.floor("h")
@@ -216,6 +366,9 @@ if "url_canonical" in df.columns:
     df["brand_name"] = df["url_canonical"].apply(_brand_from_url)
 else:
     df["brand_name"] = ""
+mask_brand_meta = brand_from_meta != ""
+if mask_brand_meta.any():
+    df.loc[mask_brand_meta, "brand_name"] = brand_from_meta[mask_brand_meta]
 
 if "title" in df.columns:
     df["display_title"] = df["title"].fillna("")
@@ -235,6 +388,10 @@ else:
 recent_cutoff = now_utc - past_window
 
 filtered = df.copy()
+if selected_categories:
+    filtered = filtered[filtered["category"].isin(selected_categories)]
+elif category_options:
+    filtered = filtered[filtered["category"].isin(category_options)]
 if keyword_filter and "keywords" in filtered.columns:
     filtered = filtered[filtered["keywords"].str.contains(keyword_filter, case=False, na=False)]
 if hashtag_filter and "hashtags" in filtered.columns:
@@ -258,6 +415,7 @@ with trending_tab:
             "display_title",
             "brand_name",
             "source_id",
+            "category",
             "published_at_display",
             "viral_score",
             "trendy_score",
@@ -278,19 +436,19 @@ with trending_tab:
         )
         display_columns = [
             col
-            for col in ["title", "brand", "source_id", "published_at", "viral_score", "trendy_score", "quality_score", "url_canonical"]
+            for col in ["title", "brand", "source_id", "category", "published_at", "viral_score", "trendy_score", "quality_score", "url_canonical"]
             if col in top_v.columns
         ]
         top_v_display = top_v.reindex(columns=display_columns)
         if {"viral_score", "trendy_score"}.issubset(top_v_display.columns):
             st.dataframe(
                 _styled_scores_table(top_v_display),
-                use_container_width=True,
+                width='stretch',
                 hide_index=True,
                 column_config=_score_table_column_config(),
             )
         else:
-            st.dataframe(top_v_display, use_container_width=True, hide_index=True)
+            st.dataframe(top_v_display, width='stretch', hide_index=True)
 
     st.subheader("Leaderboard (avg viral score)")
     if {"source_id", "viral_score"}.issubset(filtered.columns) and not filtered.empty:
@@ -361,6 +519,7 @@ with predictive_tab:
                 "display_title",
                 "brand_name",
                 "source_id",
+                "category",
                 "published_at_display",
                 "viral_score",
                 "trendy_score",
@@ -380,19 +539,19 @@ with predictive_tab:
             )
             display_columns = [
                 col
-                for col in ["title", "brand", "source_id", "published_at", "viral_score", "trendy_score", "quality_score", "url_canonical"]
+                for col in ["title", "brand", "source_id", "category", "published_at", "viral_score", "trendy_score", "quality_score", "url_canonical"]
                 if col in candidates_table.columns
             ]
             candidates_display = candidates_table.reindex(columns=display_columns)
             if {"viral_score", "trendy_score"}.issubset(candidates_display.columns):
                 st.dataframe(
                     _styled_scores_table(candidates_display),
-                    use_container_width=True,
+                    width='stretch',
                     hide_index=True,
                     column_config=_score_table_column_config(),
                 )
             else:
-                st.dataframe(candidates_display, use_container_width=True, hide_index=True)
+                st.dataframe(candidates_display, width='stretch', hide_index=True)
 
     st.subheader("Daily Digest Preview")
     if "published_at" not in df.columns:
@@ -429,17 +588,18 @@ with predictive_tab:
         else:
             digest_columns = [
                 col
-                for col in ["title", "brand", "source_id", "published_at", "viral_score", "trendy_score", "url_canonical"]
+                for col in ["title", "brand", "source_id", "category", "published_at", "viral_score", "trendy_score", "url_canonical"]
                 if col in digest.columns
             ]
             digest_display = digest.reindex(columns=digest_columns)
             if {"viral_score", "trendy_score"}.issubset(digest_display.columns):
                 st.dataframe(
                     _styled_scores_table(digest_display),
-                    use_container_width=True,
+                    width='stretch',
                     hide_index=True,
                     column_config=_score_table_column_config(),
                 )
             else:
-                st.dataframe(digest_display, use_container_width=True, hide_index=True)
+                st.dataframe(digest_display, width='stretch', hide_index=True)
+
 

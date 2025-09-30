@@ -69,5 +69,5 @@ class RedditPublicConnector(BaseConnector):
             hashtags=hashtags,
             keywords=keywords,
             engagement_raw=engagement,
-            metadata={"subreddit": payload.get("subreddit"), "tags": self.source.tags},
+            metadata=self.metadata({"subreddit": payload.get("subreddit")}),
         )

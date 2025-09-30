@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import abc
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, Iterable, List, Optional
 
 from ..models import ContentItem, SourceConfig
 
@@ -15,6 +15,18 @@ class BaseConnector(abc.ABC):
     @property
     def source_id(self) -> str:
         return self.source.handle or self.source.path or (str(self.source.url) if self.source.url else "unknown")
+
+    def metadata(self, extra: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        meta: Dict[str, Any] = {}
+        if getattr(self.source, "tags", None):
+            meta["tags"] = self.source.tags
+        if getattr(self.source, "category", None):
+            meta["category"] = self.source.category
+        if getattr(self.source, "brand_name", None):
+            meta["brand_name"] = self.source.brand_name
+        if extra:
+            meta.update(extra)
+        return meta
 
     @abc.abstractmethod
     async def fetch(self) -> Iterable[Dict[str, Any]]:
