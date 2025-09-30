@@ -173,6 +173,7 @@ def _score_table_column_config() -> dict[str, st.column_config.Column]:
     }
 
 
+
 def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str]) -> None:
     st.title("Catalog Manager")
     if not catalog_path:
@@ -181,14 +182,28 @@ def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str
 
     st.caption(f"Catalog file: {Path(catalog_path).name}")
 
+    if message := st.session_state.pop("catalog_message", None):
+        st.success(message)
+
     display_df = catalog_df.rename(columns={"Brand Name": "Brand", "URL": "Feed URL"}).reset_index(drop=True)
     st.dataframe(display_df, use_container_width=True, hide_index=True)
 
     st.subheader("Add or Update Feed")
+    st.session_state.setdefault("catalog_brand_input", "")
+    st.session_state.setdefault("catalog_url_input", "")
+    st.session_state.setdefault("catalog_category_select", "")
     with st.form("catalog_add_form"):
-        brand_input = st.text_input("Brand name")
-        url_input = st.text_input("Feed URL")
-        category_input = st.text_input("Category")
+        brand_input = st.text_input("Brand name", key="catalog_brand_input")
+        url_input = st.text_input("Feed URL", key="catalog_url_input")
+        existing_categories = sorted({value for value in catalog_df["Category"].astype(str).str.strip() if value})
+        category_options = [''] + existing_categories
+        category_input = st.selectbox(
+            "Category",
+            options=category_options,
+            index=category_options.index(st.session_state.get("catalog_category_select", ""))
+                if st.session_state.get("catalog_category_select", "") in category_options else 0,
+            key="catalog_category_select",
+        )
         submit_add = st.form_submit_button("Save feed")
     if submit_add:
         try:
@@ -198,38 +213,59 @@ def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str
         else:
             save_catalog_table(updated_catalog, catalog_path)
             load_category_map.cache_clear()
-            st.success("Feed saved.")
-            st.experimental_rerun()
+            for key in ("catalog_brand_input", "catalog_url_input", "catalog_category_select"):
+                st.session_state.pop(key, None)
+            st.session_state["catalog_message"] = "Feed saved."
+            st.rerun()
 
     st.subheader("Delete Feed(s)")
     if catalog_df.empty:
         st.info("Add a feed above to begin.")
     else:
         site_options = {f"{row['Brand Name']} ({row['URL']})": row['URL'] for _, row in catalog_df.iterrows()}
-        selected_sites = st.multiselect("Select feeds to delete", list(site_options.keys()))
-        if st.button("Delete selected feeds"):
+        selected_sites = st.multiselect("Select feeds to delete", list(site_options.keys()), key="catalog_delete_feed_select")
+        if st.button("Delete selected feeds", key="catalog_delete_feed_button"):
             if not selected_sites:
                 st.info("Select at least one feed to delete.")
             else:
                 updated_catalog = remove_catalog_entries(catalog_df, [site_options[label] for label in selected_sites])
                 save_catalog_table(updated_catalog, catalog_path)
                 load_category_map.cache_clear()
-                st.success("Selected feeds deleted.")
-                st.experimental_rerun()
+                st.session_state["catalog_message"] = "Selected feeds deleted."
+                st.rerun()
+
+    st.subheader("Add Category")
+    st.session_state.setdefault("catalog_new_category_name", "")
+    with st.form("catalog_add_category_form"):
+        new_category_only = st.text_input("Category name", key="catalog_new_category_name")
+        submit_category = st.form_submit_button("Add category")
+    if submit_category:
+        if not new_category_only.strip():
+            st.error("Enter a category name.")
+        else:
+            updated_catalog = ensure_category_row(catalog_df, new_category_only)
+            save_catalog_table(updated_catalog, catalog_path)
+            load_category_map.cache_clear()
+            st.session_state.pop("catalog_new_category_name", None)
+            st.session_state["catalog_message"] = "Category added."
+            st.rerun()
 
     st.subheader("Delete Category")
     category_values = sorted({value for value in catalog_df["Category"].astype(str).str.strip() if value})
     if category_values:
-        category_to_delete = st.selectbox("Category to delete", category_values)
-        if st.button("Delete category"):
+        category_to_delete = st.selectbox(
+            "Category to delete",
+            category_values,
+            key="catalog_delete_category_select",
+        )
+        if st.button("Delete category", key="catalog_delete_category_button"):
             updated_catalog = remove_catalog_category(catalog_df, category_to_delete)
             save_catalog_table(updated_catalog, catalog_path)
             load_category_map.cache_clear()
-            st.success("Category deleted.")
-            st.experimental_rerun()
+            st.session_state["catalog_message"] = "Category deleted."
+            st.rerun()
     else:
         st.info("No categories defined yet.")
-
 def _ingest_and_store(cfg, ingest_hours: int) -> None:
     items = asyncio.run(ingest_async(cfg))
     if ingest_hours:

@@ -18,7 +18,6 @@ MakeUseOf,News & Media,https://www.makeuseof.com/feed/
 ExtremeTech,News & Media,https://www.extremetech.com/feed
 TechSpot,News & Media,https://www.techspot.com/backend.xml
 SlashGear,News & Media,https://www.slashgear.com/feed/
-BleepingComputer,News & Media,https://www.bleepingcomputer.com/feed/
 The Register,News & Media,https://www.theregister.com/headlines.atom
 gHacks,News & Media,https://www.ghacks.net/feed/
 Lifehacker (All),News & Media,https://lifehacker.com/rss
@@ -56,8 +55,6 @@ DZone (Home),Developer / OSS & Cloud,https://feeds.dzone.com/home
 Smashing Magazine,Developer / OSS & Cloud,https://www.smashingmagazine.com/feed/
 SitePoint,Developer / OSS & Cloud,https://www.sitepoint.com/feed/
 CSS-Tricks,Developer / OSS & Cloud,https://css-tricks.com/feed/
-Krebs on Security (Dev-adjacent),Developer / OSS & Cloud,https://krebsonsecurity.com/feed/
-Schneier on Security,Developer / OSS & Cloud,https://www.schneier.com/feed/atom/
 Dev.to,Developer / OSS & Cloud,https://dev.to/feed
 Stack Overflow Blog,Developer / OSS & Cloud,https://stackoverflow.blog/feed/
 GitHub Blog,Developer / OSS & Cloud,https://github.blog/feed/
@@ -82,3 +79,25 @@ KDNuggets,Developer / OSS & Cloud,https://www.kdnuggets.com/feed
 Towards Data Science,Developer / OSS & Cloud,https://towardsdatascience.com/feed
 Unity Blog,Developer / OSS & Cloud,https://blog.unity.com/feed
 Google News (Technology),News & Media,https://news.google.com/rss/search?q=technology&hl=en-US&gl=US&ceid=US:en
+Krebs on Security,Security / Hacking News,https://krebsonsecurity.com/feed/
+The Hacker News,Security / Hacking News,https://thehackernews.com/feeds/posts/default
+BleepingComputer,Security / Hacking News,https://www.bleepingcomputer.com/feed/
+Dark Reading,Security / Hacking News,https://www.darkreading.com/rss.xml
+SecurityWeek,Security / Hacking News,https://www.securityweek.com/feed/
+Help Net Security,Security / Hacking News,https://www.helpnetsecurity.com/feed/
+Infosecurity Magazine (News),Security / Hacking News,https://www.infosecurity-magazine.com/rss/news/
+CSO Online,Security / Hacking News,https://www.csoonline.com/index.rss
+SANS Internet Storm Center (ISC),Security / Hacking News,https://isc.sans.edu/rssfeed.xml
+Schneier on Security,Security / Hacking News,https://www.schneier.com/feed/atom/
+HackRead,Security / Hacking News,https://www.hackread.com/feed/
+The Daily Swig (PortSwigger),Security / Hacking News,https://portswigger.net/daily-swig/rss
+Exploit Database,Security / Hacking News,https://www.exploit-db.com/rss.xml
+Packet Storm,Security / Hacking News,https://packetstormsecurity.com/feeds/
+Naked Security (Sophos),Security / Hacking News,https://nakedsecurity.sophos.com/feed/
+CISA (US-CERT Alerts),Security / Hacking News,https://www.cisa.gov/uscert/ncas/alerts.xml
+IBM Security Intelligence,Security / Hacking News,https://securityintelligence.com/feed/
+Mandiant (Blog),Security / Hacking News,https://www.mandiant.com/resources/blog/rss.xml
+Trend Micro (Security News),Security / Hacking News,https://www.trendmicro.com/vinfo/us/security/news/rss
+TechCrunch (Security Tag),Security / Hacking News,https://techcrunch.com/tag/security/feed/
+ZDNet (Security),Security / Hacking News,https://www.zdnet.com/topic/security/rss.xml
+Wired (Security),Security / Hacking News,https://www.wired.com/feed/category/security/latest/rss
