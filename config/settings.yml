@@ -1,0 +1,19 @@
+fetch:
+  user_agent: "OpenScraper/1.0 (+contact@example.com)"
+  max_concurrency: 10
+  timeout_s: 20
+  respect_robots: true
+
+storage:
+  engine: duckdb
+  path: data/db.duckdb
+  write_parquet: true
+  parquet_dir: data/exports
+
+scoring:
+  lambda_decay: 0.05
+  weights:
+    like: 1
+    comment: 3
+    share: 5
+    view: 0.01

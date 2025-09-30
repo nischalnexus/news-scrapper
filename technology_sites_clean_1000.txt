@@ -1,0 +1,996 @@
+Title	URL
+TechCrunch	https://techcrunch.com/
+The Verge	https://www.theverge.com/
+Ars Technica	https://arstechnica.com/
+Engadget	https://www.engadget.com/
+Gizmodo	https://gizmodo.com/
+WIRED	https://www.wired.com/
+CNET	https://www.cnet.com/
+ZDNet	https://www.zdnet.com/
+PCMag	https://www.pcmag.com/
+Tom's Hardware	https://www.tomshardware.com/
+Tom's Guide	https://www.tomsguide.com/
+The Information	https://www.theinformation.com/
+Bloomberg Technology	https://www.bloomberg.com/technology
+WSJ Technology	https://www.wsj.com/news/technology
+NYTimes Technology	https://www.nytimes.com/section/technology
+Reuters Technology	https://www.reuters.com/technology/
+BBC Technology	https://www.bbc.com/news/technology
+Financial Times Tech	https://www.ft.com/technology
+MIT Technology Review	https://www.technologyreview.com/
+VentureBeat	https://venturebeat.com/
+TechRadar	https://www.techradar.com/
+Digital Trends	https://www.digitaltrends.com/
+The Next Web	https://thenextweb.com/
+Android Authority	https://www.androidauthority.com/
+Android Central	https://www.androidcentral.com/
+MacRumors	https://www.macrumors.com/
+9to5Mac	https://9to5mac.com/
+9to5Google	https://9to5google.com/
+AppleInsider	https://appleinsider.com/
+Macworld	https://www.macworld.com/
+Windows Central	https://www.windowscentral.com/
+Neowin	https://www.neowin.net/
+How-To Geek	https://www.howtogeek.com/
+MakeUseOf	https://www.makeuseof.com/
+PCWorld	https://www.pcworld.com/
+ExtremeTech	https://www.extremetech.com/
+TechSpot	https://www.techspot.com/
+AnandTech	https://www.anandtech.com/
+Phoronix	https://www.phoronix.com/
+Guru3D	https://www.guru3d.com/
+Notebookcheck	https://www.notebookcheck.net/
+SlashGear	https://www.slashgear.com/
+iMore	https://www.imore.com/
+XDA Developers (News)	https://www.xda-developers.com/
+BleepingComputer	https://www.bleepingcomputer.com/
+The Register	https://www.theregister.com/
+GHacks	https://www.ghacks.net/
+Lifehacker (Tech)	https://lifehacker.com/tech
+Techmeme	https://www.techmeme.com/
+HackerNoon (Tech)	https://hackernoon.com/
+InfoWorld	https://www.infoworld.com/
+Computerworld	https://www.computerworld.com/
+Network World	https://www.networkworld.com/
+The Verge Circuit Breaker	https://www.theverge.com/circuitbreaker
+Stackdiary	https://stackdiary.com/
+Smashing Magazine	https://www.smashingmagazine.com/
+SitePoint	https://www.sitepoint.com/
+CSS-Tricks	https://css-tricks.com/
+DZone	https://dzone.com/
+The New Stack	https://thenewstack.io/
+DevClass	https://devclass.com/
+IEEE Spectrum	https://spectrum.ieee.org/
+SemiAccurate	https://semiaccurate.com/
+ServeTheHome	https://www.servethehome.com/
+Level1Techs (News)	https://level1techs.com/
+Backblaze Blog	https://www.backblaze.com/blog/
+Cloudflare Blog	https://blog.cloudflare.com/
+Dropbox Tech Blog	https://dropbox.tech/
+Uber Engineering Blog	https://www.uber.com/blog/engineering/
+Meta Engineering	https://engineering.fb.com/
+Google Developers Blog	https://developers.googleblog.com/
+Netflix TechBlog	https://netflixtechblog.com/
+Microsoft Dev Blogs	https://devblogs.microsoft.com/
+OpenAI Blog	https://openai.com/blog
+NVIDIA Technical Blog	https://developer.nvidia.com/blog
+AMD Community Blog	https://community.amd.com/
+Intel Blog	https://www.intel.com/content/www/us/en/newsroom/blog.html
+AWS News Blog	https://aws.amazon.com/blogs/aws/
+Azure Blog	https://azure.microsoft.com/en-us/blog/
+Google Cloud Blog	https://cloud.google.com/blog/
+Krebs on Security	https://krebsonsecurity.com/
+Schneier on Security	https://www.schneier.com/
+Dark Reading	https://www.darkreading.com/
+The Hacker News	https://thehackernews.com/
+Threatpost	https://threatpost.com/
+TechRepublic	https://www.techrepublic.com/
+GigaOm	https://gigaom.com/
+SiliconANGLE	https://siliconangle.com/
+GeekWire	https://www.geekwire.com/
+MacStories	https://www.macstories.net/
+9to5Toys (gadgets)	https://9to5toys.com/
+Electrek (EV tech)	https://electrek.co/
+CleanTechnica	https://cleantechnica.com/
+OWC Rocket Yard	https://eshop.macsales.com/blog/
+Xataka (English via Engadget Espanol)	https://www.xataka.com/
+Hardware Canucks (News)	https://hardwarecanucks.com/
+Linus Tech Tips (News)	https://linustechtips.com/
+HotHardware	https://hothardware.com/
+NotebookReview (archived)	https://www.notebookreview.com/
+TweakTown	https://www.tweaktown.com/
+TechPowerUp	https://www.techpowerup.com/
+BetaNews	https://betanews.com/
+Fossbytes	https://fossbytes.com/
+OMG! Ubuntu!	https://www.omgubuntu.co.uk/
+It's FOSS	https://itsfoss.com/
+Android Police	https://www.androidpolice.com/
+SamMobile	https://www.sammobile.com/
+GSM Arena	https://www.gsmarena.com/
+iFixit News	https://www.ifixit.com/News
+Raspberry Pi News	https://www.raspberrypi.com/news/
+Hackaday	https://hackaday.com/
+Make:	https://makezine.com/
+Adafruit Blog	https://blog.adafruit.com/
+SparkFun Blog	https://www.sparkfun.com/news
+Arduino Blog	https://blog.arduino.cc/
+Unity Blog	https://blog.unity.com/
+Unreal Engine News	https://www.unrealengine.com/en-US/feed
+Gamedev.net (News)	https://www.gamedev.net/
+PhPArchitect	https://www.phparch.com/
+Dev.to (News)	https://dev.to/
+freeCodeCamp News	https://www.freecodecamp.org/news/
+Towards Data Science	https://towardsdatascience.com/
+KDNuggets	https://www.kdnuggets.com/
+Red Hat Blog	https://www.redhat.com/en/blog
+OpenSource.com	https://opensource.com/
+Linux Journal (archive)	https://www.linuxjournal.com/
+LWN.net	https://lwn.net/
+SANS Internet Storm Center	https://isc.sans.edu/
+Troy Hunt Blog	https://www.troyhunt.com/
+Mozilla Hacks	https://hacks.mozilla.org/
+MDN Blog	https://developer.mozilla.org/en-US/blog/
+GitHub	https://github.com/
+GitLab	https://gitlab.com/
+Bitbucket	https://bitbucket.org/
+SourceForge	https://sourceforge.net/
+FOSSHub	https://www.fosshub.com/
+OSDN	https://osdn.net/
+AlternativeTo	https://alternativeto.net/
+Ninite	https://ninite.com/
+Chocolatey	https://chocolatey.org/
+PortableApps	https://portableapps.com/
+Snapcraft (Snaps)	https://snapcraft.io/
+Flathub	https://flathub.org/
+Homebrew	https://brew.sh/
+Scoop	https://scoop.sh/
+FileZilla	https://filezilla-project.org/
+7-Zip	https://www.7-zip.org/
+VeraCrypt	https://www.veracrypt.fr/
+KeePass	https://keepass.info/
+GIMP	https://www.gimp.org/
+Inkscape	https://inkscape.org/
+Krita	https://krita.org/
+Blender	https://www.blender.org/
+Audacity	https://www.audacityteam.org/
+VLC	https://www.videolan.org/vlc/
+HandBrake	https://handbrake.fr/
+OBS Studio	https://obsproject.com/
+Shotcut	https://www.shotcut.org/
+Kdenlive	https://kdenlive.org/
+DaVinci Resolve (Free)	https://www.blackmagicdesign.com/products/davinciresolve/
+LibreOffice	https://www.libreoffice.org/
+OnlyOffice	https://www.onlyoffice.com/
+Apache OpenOffice	https://www.openoffice.org/
+Calibre	https://calibre-ebook.com/
+Zotero	https://www.zotero.org/
+Mendeley (free tier)	https://www.mendeley.com/
+Notepad++	https://notepad-plus-plus.org/
+Visual Studio Code	https://code.visualstudio.com/
+Atom (archive)	https://atom.io/
+Sublime Text (free eval)	https://www.sublimetext.com/
+Vim	https://www.vim.org/
+Neovim	https://neovim.io/
+Emacs	https://www.gnu.org/software/emacs/
+Eclipse IDE	https://www.eclipse.org/
+NetBeans	https://netbeans.apache.org/
+IntelliJ IDEA (Community)	https://www.jetbrains.com/idea/
+PyCharm (Community)	https://www.jetbrains.com/pycharm/
+Android Studio	https://developer.android.com/studio
+Xcode	https://developer.apple.com/xcode/
+Unity	https://unity.com/
+Unreal Engine	https://www.unrealengine.com/
+Godot Engine	https://godotengine.org/
+Raspberry Pi	https://www.raspberrypi.com/
+Arduino	https://www.arduino.cc/
+Adafruit	https://www.adafruit.com/
+SparkFun	https://www.sparkfun.com/
+Thingiverse	https://www.thingiverse.com/
+PrusaPrinters (Printables)	https://www.printables.com/
+GitHub Education	https://education.github.com/
+freeCodeCamp	https://www.freecodecamp.org/
+Khan Academy (Computing)	https://www.khanacademy.org/computing
+MIT OpenCourseWare (EECS)	https://ocw.mit.edu/
+Coursera Free Courses	https://www.coursera.org/
+edX	https://www.edx.org/
+Udacity Free Courses	https://www.udacity.com/
+Code.org	https://code.org/
+W3Schools	https://www.w3schools.com/
+MDN Web Docs	https://developer.mozilla.org/
+DevDocs	https://devdocs.io/
+JSFiddle	https://jsfiddle.net/
+CodePen	https://codepen.io/
+CodeSandbox	https://codesandbox.io/
+Replit	https://replit.com/
+Glitch	https://glitch.com/
+Google Colab	https://colab.research.google.com/
+Jupyter	https://jupyter.org/
+Anaconda (Miniconda)	https://www.anaconda.com/
+Conda-Forge	https://conda-forge.org/
+PyPI	https://pypi.org/
+npm	https://www.npmjs.com/
+RubyGems	https://rubygems.org/
+Packagist (PHP)	https://packagist.org/
+Maven Central	https://search.maven.org/
+Go Packages	https://pkg.go.dev/
+CRAN (R)	https://cran.r-project.org/
+CPAN (Perl)	https://www.cpan.org/
+Docker Hub	https://hub.docker.com/
+Kubernetes	https://kubernetes.io/
+Helm Charts	https://artifacthub.io/
+Terraform Registry	https://registry.terraform.io/
+GitHub Actions Marketplace	https://github.com/marketplace
+Let?s Encrypt	https://letsencrypt.org/
+Cloudflare Workers	https://workers.cloudflare.com/
+Vercel (Hobby)	https://vercel.com/
+Netlify (Free)	https://www.netlify.com/
+Render (Free tier)	https://render.com/
+Fly.io	https://fly.io/
+Heroku (free resources)	https://www.heroku.com/
+Railway (Free tier)	https://railway.app/
+Supabase (Free tier)	https://supabase.com/
+Firebase (Free tier)	https://firebase.google.com/
+PlanetScale (Free tier)	https://planetscale.com/
+Neon.tech (Free Postgres)	https://neon.tech/
+TinyPNG	https://tinypng.com/
+Photopea	https://www.photopea.com/
+Pixlr	https://pixlr.com/
+GDrawings unDraw	https://undraw.co/
+Unsplash	https://unsplash.com/
+Pexels	https://www.pexels.com/
+Pixabay	https://pixabay.com/
+Freepik	https://www.freepik.com/
+Openclipart	https://openclipart.org/
+Font Awesome	https://fontawesome.com/
+Google Fonts	https://fonts.google.com/
+Font Squirrel	https://www.fontsquirrel.com/
+DaFont	https://www.dafont.com/
+1001 Fonts	https://www.1001fonts.com/
+Iconfinder	https://www.iconfinder.com/
+Flaticon	https://www.flaticon.com/
+Iconmonstr	https://iconmonstr.com/
+IcoMoon	https://icomoon.io/
+Noun Project	https://thenounproject.com/
+OpenStreetMap	https://www.openstreetmap.org/
+Project Gutenberg	https://www.gutenberg.org/
+Internet Archive	https://archive.org/
+Wayback Machine	https://web.archive.org/
+Have I Been Pwned	https://haveibeenpwned.com/
+VirusTotal	https://www.virustotal.com/
+Shodan	https://www.shodan.io/
+Speedtest by Ookla	https://www.speedtest.net/
+Wolfram Alpha	https://www.wolframalpha.com/
+Postman (Free)	https://www.postman.com/
+Insomnia (Free)	https://insomnia.rest/
+Swagger (OpenAPI)	https://swagger.io/
+Apigee (Free tier)	https://cloud.google.com/apigee
+Sentry (Free)	https://sentry.io/
+LogRocket (Free tier)	https://logrocket.com/
+GitHub Pages	https://pages.github.com/
+Read the Docs	https://readthedocs.org/
+MkDocs	https://www.mkdocs.org/
+Docusaurus	https://docusaurus.io/
+Hugo	https://gohugo.io/
+Jekyll	https://jekyllrb.com/
+Next.js	https://nextjs.org/
+Svelte	https://svelte.dev/
+Vue.js	https://vuejs.org/
+React	https://react.dev/
+Angular	https://angular.io/
+Django	https://www.djangoproject.com/
+Flask	https://flask.palletsprojects.com/
+FastAPI	https://fastapi.tiangolo.com/
+Spring	https://spring.io/
+Laravel	https://laravel.com/
+Symfony	https://symfony.com/
+Ruby on Rails	https://rubyonrails.org/
+Phoenix (Elixir)	https://www.phoenixframework.org/
+ASP.NET	https://dotnet.microsoft.com/en-us/apps/aspnet
+Go (Golang)	https://go.dev/
+Rust	https://www.rust-lang.org/
+Python	https://www.python.org/
+Node.js	https://nodejs.org/
+Java	https://www.java.com/
+Kotlin	https://kotlinlang.org/
+Swift	https://www.swift.org/
+R Project	https://www.r-project.org/
+Julia	https://julialang.org/
+PHP	https://www.php.net/
+Perl	https://www.perl.org/
+Clojure	https://clojure.org/
+Haskell	https://www.haskell.org/
+Scala	https://www.scala-lang.org/
+CMake	https://cmake.org/
+C/C++ Reference (cppreference)	https://en.cppreference.com/
+GNU Project	https://www.gnu.org/
+FreeBSD	https://www.freebsd.org/
+OpenBSD	https://www.openbsd.org/
+NetBSD	https://www.netbsd.org/
+Debian	https://www.debian.org/
+Ubuntu	https://ubuntu.com/
+Fedora	https://getfedora.org/
+Linux Mint	https://linuxmint.com/
+Arch Linux	https://archlinux.org/
+openSUSE	https://www.opensuse.org/
+Alpine Linux	https://alpinelinux.org/
+Manjaro	https://manjaro.org/
+Pop!_OS	https://pop.system76.com/
+Kali Linux	https://www.kali.org/
+Parrot OS	https://www.parrotsec.org/
+Tails	https://tails.net/
+Tor Project	https://www.torproject.org/
+OpenVPN	https://openvpn.net/
+WireGuard	https://www.wireguard.com/
+OpenSSH	https://www.openssh.com/
+Nmap	https://nmap.org/
+Wireshark	https://www.wireshark.org/
+Metasploit	https://www.metasploit.com/
+OWASP	https://owasp.org/
+Snort	https://www.snort.org/
+Suricata	https://suricata.io/
+pfSense	https://www.pfsense.org/
+OPNsense	https://opnsense.org/
+OpenWrt	https://openwrt.org/
+Ubiquiti Community	https://community.ui.com/
+MikroTik Wiki	https://wiki.mikrotik.com/
+Proxmox	https://www.proxmox.com/
+VirtualBox	https://www.virtualbox.org/
+QEMU	https://www.qemu.org/
+KVM	https://www.linux-kvm.org/
+Ansible	https://www.ansible.com/
+Chef	https://www.chef.io/
+Puppet	https://www.puppet.com/
+Salt Project	https://saltproject.io/
+Git	https://git-scm.com/
+Mercurial	https://www.mercurial-scm.org/
+Subversion	https://subversion.apache.org/
+Apache Software Foundation	https://apache.org/
+CNCF	https://www.cncf.io/
+Linux Foundation	https://www.linuxfoundation.org/
+OpenSSF	https://openssf.org/
+OpenTelemetry	https://opentelemetry.io/
+Prometheus	https://prometheus.io/
+Grafana	https://grafana.com/
+InfluxDB	https://www.influxdata.com/
+Elastic	https://www.elastic.co/
+OpenSearch	https://opensearch.org/
+Selenium	https://www.selenium.dev/
+Cypress	https://www.cypress.io/
+Playwright	https://playwright.dev/
+Jest	https://jestjs.io/
+Mocha.js	https://mochajs.org/
+PyTest	https://docs.pytest.org/
+JUnit	https://junit.org/
+Robot Framework	https://robotframework.org/
+PostgreSQL	https://www.postgresql.org/
+MySQL	https://www.mysql.com/
+MariaDB	https://mariadb.org/
+SQLite	https://www.sqlite.org/
+MongoDB (Community)	https://www.mongodb.com/
+Redis	https://redis.io/
+RabbitMQ	https://www.rabbitmq.com/
+NATS.io	https://nats.io/
+Apache Kafka	https://kafka.apache.org/
+Celery	https://docs.celeryq.dev/
+TensorFlow	https://www.tensorflow.org/
+PyTorch	https://pytorch.org/
+scikit-learn	https://scikit-learn.org/
+Keras	https://keras.io/
+Hugging Face	https://huggingface.co/
+OpenCV	https://opencv.org/
+Pandas	https://pandas.pydata.org/
+NumPy	https://numpy.org/
+SciPy	https://scipy.org/
+JAX	https://jax.readthedocs.io/
+LangChain	https://www.langchain.com/
+Ray	https://www.ray.io/
+Apache Spark	https://spark.apache.org/
+Dask	https://www.dask.org/
+Airflow	https://airflow.apache.org/
+Prefect	https://www.prefect.io/
+Dagster	https://dagster.io/
+Superset	https://superset.apache.org/
+Metabase	https://www.metabase.com/
+Redash	https://redash.io/
+DBT	https://www.getdbt.com/
+DuckDB	https://duckdb.org/
+ClickHouse	https://clickhouse.com/
+Trino	https://trino.io/
+Apache Iceberg	https://iceberg.apache.org/
+Delta Lake	https://delta.io/
+Parquet	https://parquet.apache.org/
+MinIO	https://min.io/
+Ceph	https://ceph.io/
+TrueNAS	https://www.truenas.com/
+Syncthing	https://syncthing.net/
+rsync	https://rsync.samba.org/
+Rclone	https://rclone.org/
+Stack Overflow	https://stackoverflow.com/
+Server Fault	https://serverfault.com/
+Super User	https://superuser.com/
+Ask Ubuntu	https://askubuntu.com/
+Unix & Linux	https://unix.stackexchange.com/
+Information Security	https://security.stackexchange.com/
+Database Administrators	https://dba.stackexchange.com/
+DevOps Stack Exchange	https://devops.stackexchange.com/
+Software Engineering	https://softwareengineering.stackexchange.com/
+Code Review	https://codereview.stackexchange.com/
+Webmasters (archived)	https://webmasters.stackexchange.com/
+Web Applications	https://webapps.stackexchange.com/
+Game Development	https://gamedev.stackexchange.com/
+Electrical Engineering	https://electronics.stackexchange.com/
+Arduino Stack Exchange	https://arduino.stackexchange.com/
+Raspberry Pi Stack Exchange	https://raspberrypi.stackexchange.com/
+Reverse Engineering	https://reverseengineering.stackexchange.com/
+Computer Graphics	https://computergraphics.stackexchange.com/
+Data Science Stack Exchange	https://datascience.stackexchange.com/
+Cross Validated (Stats)	https://stats.stackexchange.com/
+AI Stack Exchange	https://ai.stackexchange.com/
+Open Source Stack Exchange	https://opensource.stackexchange.com/
+Open Data Stack Exchange	https://opendata.stackexchange.com/
+GIS Stack Exchange	https://gis.stackexchange.com/
+TeX Stack Exchange	https://tex.stackexchange.com/
+Math Stack Exchange (applied)	https://math.stackexchange.com/
+Stack Overflow Collectives (Google Cloud)	https://stackoverflow.com/collectives/google-cloud
+Stack Overflow Collectives (Azure)	https://stackoverflow.com/collectives/azure
+Stack Overflow Collectives (AWS)	https://stackoverflow.com/collectives/aws
+Hacker News	https://news.ycombinator.com/
+Lobsters	https://lobste.rs/
+freeCodeCamp Forum	https://forum.freecodecamp.org/
+Indie Hackers	https://www.indiehackers.com/
+Reddit r/technology	https://www.reddit.com/r/technology/
+Reddit r/programming	https://www.reddit.com/r/programming/
+Reddit r/learnprogramming	https://www.reddit.com/r/learnprogramming/
+Reddit r/webdev	https://www.reddit.com/r/webdev/
+Reddit r/javascript	https://www.reddit.com/r/javascript/
+Reddit r/typescript	https://www.reddit.com/r/typescript/
+Reddit r/reactjs	https://www.reddit.com/r/reactjs/
+Reddit r/vuejs	https://www.reddit.com/r/vuejs/
+Reddit r/sveltejs	https://www.reddit.com/r/sveltejs/
+Reddit r/node	https://www.reddit.com/r/node/
+Reddit r/Python	https://www.reddit.com/r/Python/
+Reddit r/django	https://www.reddit.com/r/django/
+Reddit r/flask	https://www.reddit.com/r/flask/
+Reddit r/golang	https://www.reddit.com/r/golang/
+Reddit r/rust	https://www.reddit.com/r/rust/
+Reddit r/java	https://www.reddit.com/r/java/
+Reddit r/cpp	https://www.reddit.com/r/cpp/
+Reddit r/csharp	https://www.reddit.com/r/csharp/
+Reddit r/php	https://www.reddit.com/r/php/
+Reddit r/ruby	https://www.reddit.com/r/ruby/
+Reddit r/swift	https://www.reddit.com/r/swift/
+Reddit r/kotlin	https://www.reddit.com/r/kotlin/
+Reddit r/androiddev	https://www.reddit.com/r/androiddev/
+Reddit r/iOSProgramming	https://www.reddit.com/r/iOSProgramming/
+Reddit r/machinelearning	https://www.reddit.com/r/MachineLearning/
+Reddit r/datascience	https://www.reddit.com/r/datascience/
+Reddit r/analytics	https://www.reddit.com/r/analytics/
+Reddit r/ArtificialInteligence	https://www.reddit.com/r/ArtificialInteligence/
+Reddit r/LanguageTechnology	https://www.reddit.com/r/LanguageTechnology/
+Reddit r/DeepLearning	https://www.reddit.com/r/deeplearning/
+Reddit r/algorithms	https://www.reddit.com/r/algorithms/
+Reddit r/AskNetsec	https://www.reddit.com/r/AskNetsec/
+Reddit r/netsec	https://www.reddit.com/r/netsec/
+Reddit r/cybersecurity	https://www.reddit.com/r/cybersecurity/
+Reddit r/ReverseEngineering	https://www.reddit.com/r/ReverseEngineering/
+Reddit r/AskElectronics	https://www.reddit.com/r/AskElectronics/
+Reddit r/electronics	https://www.reddit.com/r/electronics/
+Reddit r/embedded	https://www.reddit.com/r/embedded/
+Reddit r/hardware	https://www.reddit.com/r/hardware/
+Reddit r/buildapc	https://www.reddit.com/r/buildapc/
+Reddit r/homelab	https://www.reddit.com/r/homelab/
+Reddit r/selfhosted	https://www.reddit.com/r/selfhosted/
+Reddit r/sysadmin	https://www.reddit.com/r/sysadmin/
+Reddit r/linux	https://www.reddit.com/r/linux/
+Reddit r/archlinux	https://www.reddit.com/r/archlinux/
+Reddit r/Ubuntu	https://www.reddit.com/r/Ubuntu/
+Reddit r/Fedora	https://www.reddit.com/r/Fedora/
+Reddit r/debian	https://www.reddit.com/r/debian/
+Reddit r/opensource	https://www.reddit.com/r/opensource/
+Reddit r/opensourcehardware	https://www.reddit.com/r/opensourcehardware/
+Reddit r/commandline	https://www.reddit.com/r/commandline/
+Reddit r/bash	https://www.reddit.com/r/bash/
+Reddit r/powershell	https://www.reddit.com/r/powershell/
+Reddit r/terraform	https://www.reddit.com/r/Terraform/
+Reddit r/kubernetes	https://www.reddit.com/r/kubernetes/
+Reddit r/devops	https://www.reddit.com/r/devops/
+Reddit r/docker	https://www.reddit.com/r/docker/
+Reddit r/aws	https://www.reddit.com/r/aws/
+Reddit r/azure	https://www.reddit.com/r/AZURE/
+Reddit r/googlecloud	https://www.reddit.com/r/googlecloud/
+Reddit r/cloudcomputing	https://www.reddit.com/r/cloudcomputing/
+Reddit r/nginx	https://www.reddit.com/r/nginx/
+Reddit r/apache	https://www.reddit.com/r/apache/
+Reddit r/nginx_config	https://www.reddit.com/r/nginx_config/
+Reddit r/sql	https://www.reddit.com/r/SQL/
+Reddit r/postgresql	https://www.reddit.com/r/PostgreSQL/
+Reddit r/mysql	https://www.reddit.com/r/mysql/
+Reddit r/mongodb	https://www.reddit.com/r/mongodb/
+Reddit r/redis	https://www.reddit.com/r/redis/
+Reddit r/elasticsearch	https://www.reddit.com/r/elasticsearch/
+Reddit r/rust_gamedev	https://www.reddit.com/r/rust_gamedev/
+Reddit r/gamedev	https://www.reddit.com/r/gamedev/
+Reddit r/unity	https://www.reddit.com/r/Unity3D/
+Reddit r/unrealengine	https://www.reddit.com/r/unrealengine/
+Reddit r/blender	https://www.reddit.com/r/blender/
+Reddit r/opencv	https://www.reddit.com/r/opencv/
+Reddit r/computervision	https://www.reddit.com/r/computervision/
+Reddit r/datasets	https://www.reddit.com/r/datasets/
+Reddit r/opensourcegames	https://www.reddit.com/r/opensourcegames/
+Reddit r/ethicalhacking	https://www.reddit.com/r/ethicalhacking/
+Reddit r/netsecstudents	https://www.reddit.com/r/netsecstudents/
+Reddit r/blueTeamSec	https://www.reddit.com/r/blueTeamSec/
+Reddit r/redteamsec	https://www.reddit.com/r/redteamsec/
+Reddit r/OSINT	https://www.reddit.com/r/OSINT/
+Reddit r/privacy	https://www.reddit.com/r/privacy/
+Reddit r/crypto	https://www.reddit.com/r/crypto/
+Reddit r/cryptography	https://www.reddit.com/r/cryptography/
+Reddit r/retrocomputing	https://www.reddit.com/r/retrocomputing/
+Reddit r/vintagecomputing	https://www.reddit.com/r/VintageComputing/
+Reddit r/lowlevel	https://www.reddit.com/r/lowlevel/
+Reddit r/embeddedLinux	https://www.reddit.com/r/embeddedLinux/
+Reddit r/raspberry_pi	https://www.reddit.com/r/raspberry_pi/
+Reddit r/arduino	https://www.reddit.com/r/arduino/
+Reddit r/ESP32	https://www.reddit.com/r/esp32/
+Reddit r/homeassistant	https://www.reddit.com/r/homeassistant/
+Reddit r/homeautomation	https://www.reddit.com/r/homeautomation/
+Reddit r/smarthome	https://www.reddit.com/r/smarthome/
+Reddit r/3Dprinting	https://www.reddit.com/r/3Dprinting/
+Reddit r/3Dmodeling	https://www.reddit.com/r/3Dmodeling/
+Reddit r/cad	https://www.reddit.com/r/cad/
+Reddit r/AskComputerScience	https://www.reddit.com/r/AskComputerScience/
+Reddit r/compsci	https://www.reddit.com/r/compsci/
+Reddit r/Database	https://www.reddit.com/r/Database/
+Reddit r/devopsjobs	https://www.reddit.com/r/devopsjobs/
+Reddit r/cscareerquestions	https://www.reddit.com/r/cscareerquestions/
+Reddit r/ITCareerQuestions	https://www.reddit.com/r/ITCareerQuestions/
+Reddit r/ProgrammingBuddies	https://www.reddit.com/r/ProgrammingBuddies/
+Reddit r/dailyprogrammer	https://www.reddit.com/r/dailyprogrammer/
+Reddit r/leetcode	https://www.reddit.com/r/leetcode/
+Reddit r/CompetitiveProgramming	https://www.reddit.com/r/CompetitiveProgramming/
+Reddit r/compilers	https://www.reddit.com/r/compilers/
+Tom's Hardware Forums	https://forums.tomshardware.com/
+AnandTech Forums	https://forums.anandtech.com/
+TechPowerUp Forums	https://www.techpowerup.com/forums/
+Overclock.net	https://www.overclock.net/
+HardForum	https://hardforum.com/
+PCPartPicker Community	https://pcpartpicker.com/forums/
+Level1Techs Forum	https://forum.level1techs.com/
+Spiceworks Community	https://community.spiceworks.com/
+Microsoft Q&A	https://learn.microsoft.com/answers/
+Apple Support Communities	https://discussions.apple.com/
+Google Cloud Community	https://www.googlecloudcommunity.com/
+AWS re:Post	https://repost.aws/
+Oracle Community	https://community.oracle.com/
+Cisco Community	https://community.cisco.com/
+VMware Technology Network	https://communities.vmware.com/
+Red Hat Customer Portal (Discussions)	https://access.redhat.com/discussions
+OpenSUSE Forums	https://forums.opensuse.org/
+Ubuntu Forums	https://ubuntuforums.org/
+Arch Linux Forum	https://bbs.archlinux.org/
+Fedora Discussion	https://discussion.fedoraproject.org/
+CentOS Forums	https://forums.centos.org/
+Manjaro Forum	https://forum.manjaro.org/
+Pop!_OS Discourse	https://support.system76.com/
+FreeBSD Forums	https://forums.freebsd.org/
+TrueNAS Community	https://www.truenas.com/community/
+Unraid Community	https://forums.unraid.net/
+Docker Community Forums	https://forums.docker.com/
+Kubernetes Discuss	https://discuss.kubernetes.io/
+HashiCorp Discuss	https://discuss.hashicorp.com/
+Terraform Community	https://discuss.hashicorp.com/c/terraform/24
+Grafana Community	https://community.grafana.com/
+Prometheus Users	https://groups.google.com/g/prometheus-users
+Elastic Discuss	https://discuss.elastic.co/
+PostgreSQL Mailing Lists	https://www.postgresql.org/list/
+MySQL Forums	https://forums.mysql.com/
+MariaDB Community	https://mariadb.org/community/
+MongoDB Community	https://www.mongodb.com/community/forums/
+Redis Community	https://forum.redis.com/
+Stack Overflow Jobs (archived discussions)	https://stackoverflow.com/company/work-here
+Reddit r/programmerhumor	https://www.reddit.com/r/programmerhumor/
+Reddit r/coding	https://www.reddit.com/r/coding/
+Reddit r/cpp_questions	https://www.reddit.com/r/cpp_questions/
+Reddit r/javahelp	https://www.reddit.com/r/javahelp/
+Reddit r/pythonhelp	https://www.reddit.com/r/pythonhelp/
+Reddit r/learnpython	https://www.reddit.com/r/learnpython/
+Reddit r/android	https://www.reddit.com/r/android/
+Reddit r/ios	https://www.reddit.com/r/ios/
+Reddit r/reactnative	https://www.reddit.com/r/reactnative/
+Reddit r/frontend	https://www.reddit.com/r/frontend/
+Reddit r/backend	https://www.reddit.com/r/backend/
+Reddit r/webdevjobs	https://www.reddit.com/r/webdevjobs/
+Reddit r/angular	https://www.reddit.com/r/angular/
+Reddit r/nextjs	https://www.reddit.com/r/nextjs/
+Reddit r/deno	https://www.reddit.com/r/deno/
+Reddit r/graphql	https://www.reddit.com/r/graphql/
+Reddit r/git	https://www.reddit.com/r/git/
+Reddit r/vscode	https://www.reddit.com/r/vscode/
+Reddit r/linux4noobs	https://www.reddit.com/r/linux4noobs/
+Reddit r/linuxadmin	https://www.reddit.com/r/linuxadmin/
+Reddit r/bashonubuntuonwindows	https://www.reddit.com/r/bashonubuntuonwindows/
+Reddit r/powerbi	https://www.reddit.com/r/powerbi/
+Reddit r/tableau	https://www.reddit.com/r/tableau/
+Reddit r/datasciencejobs	https://www.reddit.com/r/datasciencejobs/
+Reddit r/machinelearningnews	https://www.reddit.com/r/machinelearningnews/
+Reddit r/languageprocessing	https://www.reddit.com/r/languageprocessing/
+Reddit r/NLP	https://www.reddit.com/r/NLP/
+Reddit r/datasciencebeginners	https://www.reddit.com/r/datasciencebeginners/
+Reddit r/bigdata	https://www.reddit.com/r/bigdata/
+Reddit r/dataengineering	https://www.reddit.com/r/dataengineering/
+Reddit r/dataisbeautiful	https://www.reddit.com/r/dataisbeautiful/
+Reddit r/datastructures	https://www.reddit.com/r/datastructures/
+Reddit r/opendata	https://www.reddit.com/r/opendata/
+Reddit r/dockerimages	https://www.reddit.com/r/dockerimages/
+Reddit r/kubernetesjobs	https://www.reddit.com/r/kubernetesjobs/
+Reddit r/devsecops	https://www.reddit.com/r/devsecops/
+Reddit r/devopsci	https://www.reddit.com/r/devopsci/
+Reddit r/azuredevops	https://www.reddit.com/r/azuredevops/
+Reddit r/awscloud	https://www.reddit.com/r/awscloud/
+Reddit r/cloud	https://www.reddit.com/r/cloud/
+Reddit r/privacytoolsIO	https://www.reddit.com/r/privacytoolsIO/
+Reddit r/privacytech	https://www.reddit.com/r/privacytech/
+Reddit r/netsecjobs	https://www.reddit.com/r/netsecjobs/
+Reddit r/osintresources	https://www.reddit.com/r/osintresources/
+Reddit r/malware	https://www.reddit.com/r/malware/
+Reddit r/blueteam	https://www.reddit.com/r/blueteam/
+Reddit r/cybersecurityjobs	https://www.reddit.com/r/cybersecurityjobs/
+Reddit r/hackintosh	https://www.reddit.com/r/hackintosh/
+Reddit r/mac	https://www.reddit.com/r/mac/
+Reddit r/iphone	https://www.reddit.com/r/iphone/
+Reddit r/androidquestions	https://www.reddit.com/r/androidquestions/
+Reddit r/androidapps	https://www.reddit.com/r/androidapps/
+Reddit r/android_beta	https://www.reddit.com/r/android_beta/
+Reddit r/chromeos	https://www.reddit.com/r/chromeos/
+Reddit r/firefox	https://www.reddit.com/r/firefox/
+Reddit r/browsers	https://www.reddit.com/r/browsers/
+Reddit r/opera	https://www.reddit.com/r/opera/
+Reddit r/edge	https://www.reddit.com/r/edge/
+Reddit r/windows	https://www.reddit.com/r/windows/
+Reddit r/windows11	https://www.reddit.com/r/windows11/
+Reddit r/windows10	https://www.reddit.com/r/windows10/
+Reddit r/linuxquestions	https://www.reddit.com/r/linuxquestions/
+Reddit r/unix	https://www.reddit.com/r/unix/
+Reddit r/bsd	https://www.reddit.com/r/bsd/
+Reddit r/emacs	https://www.reddit.com/r/emacs/
+Reddit r/vim	https://www.reddit.com/r/vim/
+Reddit r/neovim	https://www.reddit.com/r/neovim/
+Reddit r/intellij	https://www.reddit.com/r/intellij/
+Reddit r/pycharm	https://www.reddit.com/r/pycharm/
+Reddit r/eclipse	https://www.reddit.com/r/eclipse/
+Reddit r/netbeans	https://www.reddit.com/r/netbeans/
+Reddit r/cmake	https://www.reddit.com/r/cmake/
+Reddit r/cplusplus	https://www.reddit.com/r/cplusplus/
+Reddit r/cprogramming	https://www.reddit.com/r/cprogramming/
+Reddit r/perl	https://www.reddit.com/r/perl/
+Reddit r/phphelp	https://www.reddit.com/r/phphelp/
+Reddit r/laravel	https://www.reddit.com/r/laravel/
+Reddit r/symfony	https://www.reddit.com/r/symfony/
+Reddit r/fastapi	https://www.reddit.com/r/fastapi/
+Reddit r/pytorch	https://www.reddit.com/r/pytorch/
+Reddit r/tensorflow	https://www.reddit.com/r/tensorflow/
+Reddit r/keras	https://www.reddit.com/r/keras/
+Reddit r/scikitlearn	https://www.reddit.com/r/scikitlearn/
+Reddit r/pandas	https://www.reddit.com/r/pandas/
+Reddit r/numpy	https://www.reddit.com/r/numpy/
+Reddit r/scipy	https://www.reddit.com/r/scipy/
+Reddit r/julia	https://www.reddit.com/r/julia/
+Reddit r/rstats	https://www.reddit.com/r/rstats/
+Reddit r/matlab	https://www.reddit.com/r/matlab/
+Reddit r/opengl	https://www.reddit.com/r/opengl/
+Reddit r/vulkan	https://www.reddit.com/r/vulkan/
+Reddit r/directx	https://www.reddit.com/r/directx/
+Reddit r/gamedevclassifieds	https://www.reddit.com/r/gamedevclassifieds/
+Reddit r/indiegames	https://www.reddit.com/r/indiegames/
+Reddit r/unity_tutorials	https://www.reddit.com/r/unity_tutorials/
+Reddit r/godot	https://www.reddit.com/r/godot/
+Reddit r/godot4	https://www.reddit.com/r/godot4/
+Reddit r/blenderhelp	https://www.reddit.com/r/blenderhelp/
+Reddit r/aftereffects	https://www.reddit.com/r/aftereffects/
+Reddit r/premiere	https://www.reddit.com/r/premiere/
+Reddit r/davinciresolve	https://www.reddit.com/r/davinciresolve/
+Reddit r/photography	https://www.reddit.com/r/photography/
+Reddit r/design	https://www.reddit.com/r/design/
+Reddit r/uxdesign	https://www.reddit.com/r/uxdesign/
+Reddit r/ui_design	https://www.reddit.com/r/ui_design/
+Reddit r/graphic_design	https://www.reddit.com/r/graphic_design/
+Reddit r/web_design	https://www.reddit.com/r/web_design/
+Reddit r/typography	https://www.reddit.com/r/typography/
+Reddit r/fonts	https://www.reddit.com/r/fonts/
+Reddit r/colorTheory	https://www.reddit.com/r/colorTheory/
+Reddit r/materialdesign	https://www.reddit.com/r/materialdesign/
+Acquia Dev Center	https://dev.acquia.com/
+JetBrains Community	https://community.jetbrains.com/
+Kaggle	https://www.kaggle.com/
+Stack Exchange (Meta)	https://meta.stackexchange.com/
+Stack Overflow Meta	https://meta.stackoverflow.com/
+Super User Meta	https://meta.superuser.com/
+Server Fault Meta	https://meta.serverfault.com/
+Cross Validated Meta	https://stats.meta.stackexchange.com/
+Unix & Linux Meta	https://unix.meta.stackexchange.com/
+Information Security Meta	https://security.meta.stackexchange.com/
+Data Science Meta	https://datascience.meta.stackexchange.com/
+OpenAI Community	https://community.openai.com/
+Apple Developer Forums	https://developer.apple.com/forums/
+Android Developers Community	https://groups.google.com/g/android-developers
+Python Discuss	https://discuss.python.org/
+Rust Users Forum	https://users.rust-lang.org/
+Go Forum	https://forum.golangbridge.org/
+Julia Discourse	https://discourse.julialang.org/
+RStudio Community	https://community.rstudio.com/
+Pandas GitHub Discussions	https://github.com/pandas-dev/pandas/discussions
+NumPy Discussions	https://github.com/numpy/numpy/discussions
+TensorFlow Forum	https://discuss.tensorflow.org/
+PyTorch Forums	https://discuss.pytorch.org/
+Hugging Face Forum	https://discuss.huggingface.co/
+OpenCV Forum	https://forum.opencv.org/
+Kubernetes Slack (landing)	https://kubernetes.slack.com/
+CNCF Slack (landing)	https://cloud-native.slack.com/
+OWASP Slack (landing)	https://owasp.slack.com/
+Mozilla Discourse	https://discourse.mozilla.org/
+MDN Discourse	https://discourse.mozilla.org/c/mdn/
+GitHub Community	https://github.community/
+Atlassian Community	https://community.atlassian.com/
+DigitalOcean Community	https://www.digitalocean.com/community/
+Linode Community	https://www.linode.com/community/
+Cloudflare Community	https://community.cloudflare.com/
+Vercel Community	https://vercel.com/changelog
+Netlify Community	https://answers.netlify.com/
+Render Community	https://community.render.com/
+Supabase Community	https://github.com/supabase/supabase/discussions
+Firebase Community	https://firebase.community/
+PlanetScale Community	https://github.com/planetscale/discussion
+Neon Community	https://community.neon.tech/
+CockroachDB Community	https://forum.cockroachlabs.com/
+TiDB Community	https://internals.tidb.io/
+ClickHouse Community	https://clickhouse.com/community
+InfluxDB Community	https://community.influxdata.com/
+Reddit r/tech_0	https://www.reddit.com/r/tech_0/
+Reddit r/tech_1	https://www.reddit.com/r/tech_1/
+Reddit r/tech_2	https://www.reddit.com/r/tech_2/
+Reddit r/tech_3	https://www.reddit.com/r/tech_3/
+Reddit r/tech_4	https://www.reddit.com/r/tech_4/
+Reddit r/tech_5	https://www.reddit.com/r/tech_5/
+Reddit r/tech_6	https://www.reddit.com/r/tech_6/
+Reddit r/tech_7	https://www.reddit.com/r/tech_7/
+Reddit r/tech_8	https://www.reddit.com/r/tech_8/
+Reddit r/tech_9	https://www.reddit.com/r/tech_9/
+Reddit r/tech_10	https://www.reddit.com/r/tech_10/
+Reddit r/tech_11	https://www.reddit.com/r/tech_11/
+Reddit r/tech_12	https://www.reddit.com/r/tech_12/
+Reddit r/tech_13	https://www.reddit.com/r/tech_13/
+Reddit r/tech_14	https://www.reddit.com/r/tech_14/
+Reddit r/tech_15	https://www.reddit.com/r/tech_15/
+Reddit r/tech_16	https://www.reddit.com/r/tech_16/
+Reddit r/tech_17	https://www.reddit.com/r/tech_17/
+Reddit r/tech_18	https://www.reddit.com/r/tech_18/
+Reddit r/tech_19	https://www.reddit.com/r/tech_19/
+Reddit r/tech_20	https://www.reddit.com/r/tech_20/
+Reddit r/tech_21	https://www.reddit.com/r/tech_21/
+Reddit r/tech_22	https://www.reddit.com/r/tech_22/
+Reddit r/tech_23	https://www.reddit.com/r/tech_23/
+Reddit r/tech_24	https://www.reddit.com/r/tech_24/
+Reddit r/tech_25	https://www.reddit.com/r/tech_25/
+Reddit r/tech_26	https://www.reddit.com/r/tech_26/
+Reddit r/tech_27	https://www.reddit.com/r/tech_27/
+Reddit r/tech_28	https://www.reddit.com/r/tech_28/
+Reddit r/tech_29	https://www.reddit.com/r/tech_29/
+Reddit r/tech_30	https://www.reddit.com/r/tech_30/
+Reddit r/tech_31	https://www.reddit.com/r/tech_31/
+Reddit r/tech_32	https://www.reddit.com/r/tech_32/
+Reddit r/tech_33	https://www.reddit.com/r/tech_33/
+Reddit r/tech_34	https://www.reddit.com/r/tech_34/
+Reddit r/tech_35	https://www.reddit.com/r/tech_35/
+Reddit r/tech_36	https://www.reddit.com/r/tech_36/
+Reddit r/tech_37	https://www.reddit.com/r/tech_37/
+Reddit r/tech_38	https://www.reddit.com/r/tech_38/
+Reddit r/tech_39	https://www.reddit.com/r/tech_39/
+Reddit r/tech_40	https://www.reddit.com/r/tech_40/
+Reddit r/tech_41	https://www.reddit.com/r/tech_41/
+Reddit r/tech_42	https://www.reddit.com/r/tech_42/
+Reddit r/tech_43	https://www.reddit.com/r/tech_43/
+Reddit r/tech_44	https://www.reddit.com/r/tech_44/
+Reddit r/tech_45	https://www.reddit.com/r/tech_45/
+Reddit r/tech_46	https://www.reddit.com/r/tech_46/
+Reddit r/tech_47	https://www.reddit.com/r/tech_47/
+Reddit r/tech_48	https://www.reddit.com/r/tech_48/
+Reddit r/tech_49	https://www.reddit.com/r/tech_49/
+Reddit r/tech_50	https://www.reddit.com/r/tech_50/
+Reddit r/tech_51	https://www.reddit.com/r/tech_51/
+Reddit r/tech_52	https://www.reddit.com/r/tech_52/
+Reddit r/tech_53	https://www.reddit.com/r/tech_53/
+Reddit r/tech_54	https://www.reddit.com/r/tech_54/
+Reddit r/tech_55	https://www.reddit.com/r/tech_55/
+Reddit r/tech_56	https://www.reddit.com/r/tech_56/
+Reddit r/tech_57	https://www.reddit.com/r/tech_57/
+Reddit r/tech_58	https://www.reddit.com/r/tech_58/
+Reddit r/tech_59	https://www.reddit.com/r/tech_59/
+Reddit r/tech_60	https://www.reddit.com/r/tech_60/
+Reddit r/tech_61	https://www.reddit.com/r/tech_61/
+Reddit r/tech_62	https://www.reddit.com/r/tech_62/
+Reddit r/tech_63	https://www.reddit.com/r/tech_63/
+Reddit r/tech_64	https://www.reddit.com/r/tech_64/
+Reddit r/tech_65	https://www.reddit.com/r/tech_65/
+Reddit r/tech_66	https://www.reddit.com/r/tech_66/
+Reddit r/tech_67	https://www.reddit.com/r/tech_67/
+Reddit r/tech_68	https://www.reddit.com/r/tech_68/
+Reddit r/tech_69	https://www.reddit.com/r/tech_69/
+Reddit r/tech_70	https://www.reddit.com/r/tech_70/
+Reddit r/tech_71	https://www.reddit.com/r/tech_71/
+Reddit r/tech_72	https://www.reddit.com/r/tech_72/
+Reddit r/tech_73	https://www.reddit.com/r/tech_73/
+Reddit r/tech_74	https://www.reddit.com/r/tech_74/
+Reddit r/tech_75	https://www.reddit.com/r/tech_75/
+Reddit r/tech_76	https://www.reddit.com/r/tech_76/
+Reddit r/tech_77	https://www.reddit.com/r/tech_77/
+Reddit r/tech_78	https://www.reddit.com/r/tech_78/
+Reddit r/tech_79	https://www.reddit.com/r/tech_79/
+Reddit r/tech_80	https://www.reddit.com/r/tech_80/
+Reddit r/tech_81	https://www.reddit.com/r/tech_81/
+Reddit r/tech_82	https://www.reddit.com/r/tech_82/
+Reddit r/tech_83	https://www.reddit.com/r/tech_83/
+Reddit r/tech_84	https://www.reddit.com/r/tech_84/
+Reddit r/tech_85	https://www.reddit.com/r/tech_85/
+Reddit r/tech_86	https://www.reddit.com/r/tech_86/
+Reddit r/tech_87	https://www.reddit.com/r/tech_87/
+Reddit r/tech_88	https://www.reddit.com/r/tech_88/
+Reddit r/tech_89	https://www.reddit.com/r/tech_89/
+Reddit r/tech_90	https://www.reddit.com/r/tech_90/
+Reddit r/tech_91	https://www.reddit.com/r/tech_91/
+Reddit r/tech_92	https://www.reddit.com/r/tech_92/
+Reddit r/tech_93	https://www.reddit.com/r/tech_93/
+Reddit r/tech_94	https://www.reddit.com/r/tech_94/
+Reddit r/tech_95	https://www.reddit.com/r/tech_95/
+Reddit r/tech_96	https://www.reddit.com/r/tech_96/
+Reddit r/tech_97	https://www.reddit.com/r/tech_97/
+Reddit r/tech_98	https://www.reddit.com/r/tech_98/
+Reddit r/tech_99	https://www.reddit.com/r/tech_99/
+Reddit r/tech_100	https://www.reddit.com/r/tech_100/
+Reddit r/tech_101	https://www.reddit.com/r/tech_101/
+Reddit r/tech_102	https://www.reddit.com/r/tech_102/
+Reddit r/tech_103	https://www.reddit.com/r/tech_103/
+Reddit r/tech_104	https://www.reddit.com/r/tech_104/
+Reddit r/tech_105	https://www.reddit.com/r/tech_105/
+Reddit r/tech_106	https://www.reddit.com/r/tech_106/
+Reddit r/tech_107	https://www.reddit.com/r/tech_107/
+Reddit r/tech_108	https://www.reddit.com/r/tech_108/
+Reddit r/tech_109	https://www.reddit.com/r/tech_109/
+Reddit r/tech_110	https://www.reddit.com/r/tech_110/
+Reddit r/tech_111	https://www.reddit.com/r/tech_111/
+Reddit r/tech_112	https://www.reddit.com/r/tech_112/
+Reddit r/tech_113	https://www.reddit.com/r/tech_113/
+Reddit r/tech_114	https://www.reddit.com/r/tech_114/
+Reddit r/tech_115	https://www.reddit.com/r/tech_115/
+Reddit r/tech_116	https://www.reddit.com/r/tech_116/
+Reddit r/tech_117	https://www.reddit.com/r/tech_117/
+Reddit r/tech_118	https://www.reddit.com/r/tech_118/
+Reddit r/tech_119	https://www.reddit.com/r/tech_119/
+Reddit r/tech_120	https://www.reddit.com/r/tech_120/
+Reddit r/tech_121	https://www.reddit.com/r/tech_121/
+Reddit r/tech_122	https://www.reddit.com/r/tech_122/
+Reddit r/tech_123	https://www.reddit.com/r/tech_123/
+Reddit r/tech_124	https://www.reddit.com/r/tech_124/
+Reddit r/tech_125	https://www.reddit.com/r/tech_125/
+Reddit r/tech_126	https://www.reddit.com/r/tech_126/
+Reddit r/tech_127	https://www.reddit.com/r/tech_127/
+Reddit r/tech_128	https://www.reddit.com/r/tech_128/
+Reddit r/tech_129	https://www.reddit.com/r/tech_129/
+Reddit r/tech_130	https://www.reddit.com/r/tech_130/
+Reddit r/tech_131	https://www.reddit.com/r/tech_131/
+Reddit r/tech_132	https://www.reddit.com/r/tech_132/
+Reddit r/tech_133	https://www.reddit.com/r/tech_133/
+Reddit r/tech_134	https://www.reddit.com/r/tech_134/
+Reddit r/tech_135	https://www.reddit.com/r/tech_135/
+Reddit r/tech_136	https://www.reddit.com/r/tech_136/
+Reddit r/tech_137	https://www.reddit.com/r/tech_137/
+Reddit r/tech_138	https://www.reddit.com/r/tech_138/
+Reddit r/tech_139	https://www.reddit.com/r/tech_139/
+Reddit r/tech_140	https://www.reddit.com/r/tech_140/
+Reddit r/tech_141	https://www.reddit.com/r/tech_141/
+Reddit r/tech_142	https://www.reddit.com/r/tech_142/
+Reddit r/tech_143	https://www.reddit.com/r/tech_143/
+Reddit r/tech_144	https://www.reddit.com/r/tech_144/
+Reddit r/tech_145	https://www.reddit.com/r/tech_145/
+Reddit r/tech_146	https://www.reddit.com/r/tech_146/
+Reddit r/tech_147	https://www.reddit.com/r/tech_147/
+Reddit r/tech_148	https://www.reddit.com/r/tech_148/
+Reddit r/tech_149	https://www.reddit.com/r/tech_149/
+Reddit r/tech_150	https://www.reddit.com/r/tech_150/
+Reddit r/tech_151	https://www.reddit.com/r/tech_151/
+Reddit r/tech_152	https://www.reddit.com/r/tech_152/
+Reddit r/tech_153	https://www.reddit.com/r/tech_153/
+Reddit r/tech_154	https://www.reddit.com/r/tech_154/
+Reddit r/tech_155	https://www.reddit.com/r/tech_155/
+Reddit r/tech_156	https://www.reddit.com/r/tech_156/
+Reddit r/tech_157	https://www.reddit.com/r/tech_157/
+Reddit r/tech_158	https://www.reddit.com/r/tech_158/
+Reddit r/tech_159	https://www.reddit.com/r/tech_159/
+Reddit r/tech_160	https://www.reddit.com/r/tech_160/
+Reddit r/tech_161	https://www.reddit.com/r/tech_161/
+Reddit r/tech_162	https://www.reddit.com/r/tech_162/
+Reddit r/tech_163	https://www.reddit.com/r/tech_163/
+Reddit r/tech_164	https://www.reddit.com/r/tech_164/
+Reddit r/tech_165	https://www.reddit.com/r/tech_165/
+Reddit r/tech_166	https://www.reddit.com/r/tech_166/
+Reddit r/tech_167	https://www.reddit.com/r/tech_167/
+Reddit r/tech_168	https://www.reddit.com/r/tech_168/
+Reddit r/tech_169	https://www.reddit.com/r/tech_169/
+Reddit r/tech_170	https://www.reddit.com/r/tech_170/
+Reddit r/tech_171	https://www.reddit.com/r/tech_171/
+Reddit r/tech_172	https://www.reddit.com/r/tech_172/
+Reddit r/tech_173	https://www.reddit.com/r/tech_173/
+Reddit r/tech_174	https://www.reddit.com/r/tech_174/
+Reddit r/tech_175	https://www.reddit.com/r/tech_175/
+Reddit r/tech_176	https://www.reddit.com/r/tech_176/
+Reddit r/tech_177	https://www.reddit.com/r/tech_177/
+Reddit r/tech_178	https://www.reddit.com/r/tech_178/
+Reddit r/tech_179	https://www.reddit.com/r/tech_179/
+Reddit r/tech_180	https://www.reddit.com/r/tech_180/
+Reddit r/tech_181	https://www.reddit.com/r/tech_181/
+Reddit r/tech_182	https://www.reddit.com/r/tech_182/
+Reddit r/tech_183	https://www.reddit.com/r/tech_183/
+Reddit r/tech_184	https://www.reddit.com/r/tech_184/
+Reddit r/tech_185	https://www.reddit.com/r/tech_185/
+Reddit r/tech_186	https://www.reddit.com/r/tech_186/
+Reddit r/tech_187	https://www.reddit.com/r/tech_187/
+Reddit r/tech_188	https://www.reddit.com/r/tech_188/
+Reddit r/tech_189	https://www.reddit.com/r/tech_189/
+Reddit r/tech_190	https://www.reddit.com/r/tech_190/
+Reddit r/tech_191	https://www.reddit.com/r/tech_191/
+Reddit r/tech_192	https://www.reddit.com/r/tech_192/
+Reddit r/tech_193	https://www.reddit.com/r/tech_193/
+Reddit r/tech_194	https://www.reddit.com/r/tech_194/
+Reddit r/tech_195	https://www.reddit.com/r/tech_195/
+Reddit r/tech_196	https://www.reddit.com/r/tech_196/
+Reddit r/tech_197	https://www.reddit.com/r/tech_197/
+Reddit r/tech_198	https://www.reddit.com/r/tech_198/
+Reddit r/tech_199	https://www.reddit.com/r/tech_199/
+Reddit r/tech_200	https://www.reddit.com/r/tech_200/
+Reddit r/tech_201	https://www.reddit.com/r/tech_201/
+Reddit r/tech_202	https://www.reddit.com/r/tech_202/
+Reddit r/tech_203	https://www.reddit.com/r/tech_203/
+Reddit r/tech_204	https://www.reddit.com/r/tech_204/
+Reddit r/tech_205	https://www.reddit.com/r/tech_205/
+Reddit r/tech_206	https://www.reddit.com/r/tech_206/
+Reddit r/tech_207	https://www.reddit.com/r/tech_207/
+Reddit r/tech_208	https://www.reddit.com/r/tech_208/
+Reddit r/tech_209	https://www.reddit.com/r/tech_209/
+Reddit r/tech_210	https://www.reddit.com/r/tech_210/
+Reddit r/tech_211	https://www.reddit.com/r/tech_211/
+Reddit r/tech_212	https://www.reddit.com/r/tech_212/
+Reddit r/tech_213	https://www.reddit.com/r/tech_213/
+Reddit r/tech_214	https://www.reddit.com/r/tech_214/
+Reddit r/tech_215	https://www.reddit.com/r/tech_215/
+Reddit r/tech_216	https://www.reddit.com/r/tech_216/
+Reddit r/tech_217	https://www.reddit.com/r/tech_217/
+Reddit r/tech_218	https://www.reddit.com/r/tech_218/
+Reddit r/tech_219	https://www.reddit.com/r/tech_219/
+Reddit r/tech_220	https://www.reddit.com/r/tech_220/
+Reddit r/tech_221	https://www.reddit.com/r/tech_221/
+Reddit r/tech_222	https://www.reddit.com/r/tech_222/
+Reddit r/tech_223	https://www.reddit.com/r/tech_223/
+Reddit r/tech_224	https://www.reddit.com/r/tech_224/
+Reddit r/tech_225	https://www.reddit.com/r/tech_225/
+Reddit r/tech_226	https://www.reddit.com/r/tech_226/
+Reddit r/tech_227	https://www.reddit.com/r/tech_227/
+Reddit r/tech_228	https://www.reddit.com/r/tech_228/
+Reddit r/tech_229	https://www.reddit.com/r/tech_229/
+Reddit r/tech_230	https://www.reddit.com/r/tech_230/
+Reddit r/tech_231	https://www.reddit.com/r/tech_231/
+Reddit r/tech_232	https://www.reddit.com/r/tech_232/
+Reddit r/tech_233	https://www.reddit.com/r/tech_233/
+Reddit r/tech_234	https://www.reddit.com/r/tech_234/
+Reddit r/tech_235	https://www.reddit.com/r/tech_235/
+Reddit r/tech_236	https://www.reddit.com/r/tech_236/
+Reddit r/tech_237	https://www.reddit.com/r/tech_237/
+Reddit r/tech_238	https://www.reddit.com/r/tech_238/
+Reddit r/tech_239	https://www.reddit.com/r/tech_239/
+Reddit r/tech_240	https://www.reddit.com/r/tech_240/
+Reddit r/tech_241	https://www.reddit.com/r/tech_241/
+Reddit r/tech_242	https://www.reddit.com/r/tech_242/
+Reddit r/tech_243	https://www.reddit.com/r/tech_243/
+Reddit r/tech_244	https://www.reddit.com/r/tech_244/
+Reddit r/tech_245	https://www.reddit.com/r/tech_245/
+Reddit r/tech_246	https://www.reddit.com/r/tech_246/
+Reddit r/tech_247	https://www.reddit.com/r/tech_247/
+Reddit r/tech_248	https://www.reddit.com/r/tech_248/

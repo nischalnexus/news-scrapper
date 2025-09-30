@@ -1,0 +1,23 @@
+# Core runtime
+scrapy>=2.11
+httpx>=0.27
+aiohttp>=3.9
+trafilatura>=1.6
+beautifulsoup4>=4.12
+lxml>=4.9
+requests-cache>=1.2
+diskcache>=5.6
+duckdb>=0.10
+pandas>=2.2
+pyyaml>=6.0
+pydantic>=2.6
+typer[all]>=0.9
+streamlit>=1.36
+sentence-transformers>=2.2
+scikit-learn>=1.5
+bertopic>=0.16
+spacy>=3.7
+wordcloud>=1.9
+feedparser>=6.0
+python-dateutil>=2.9
+playwright>=1.45

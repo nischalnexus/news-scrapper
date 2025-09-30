@@ -1,0 +1,22 @@
+sources:
+  - type: rss
+    url: https://feeds.arstechnica.com/arstechnica/index/
+    tags: [news, rss]
+  - type: web
+    url: https://techcrunch.com/
+    crawl:
+      depth: 0
+      max_pages: 5
+      render: false
+    tags: [news, web]
+  - type: mastodon
+    instance: mastodon.social
+    handle: "@mozilla"
+    crawl:
+      limit: 20
+    tags: [social, mastodon]
+  - type: reddit
+    path: /r/technology/
+    crawl:
+      limit: 25
+    tags: [reddit, community]
