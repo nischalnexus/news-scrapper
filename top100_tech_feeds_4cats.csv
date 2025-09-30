@@ -1,7 +1,4 @@
 Brand,Category,Link
-Reuters Technology,News & Media,https://www.reuters.com/technology/rss
-PCMag,News & Media,https://www.pcmag.com/feeds/all
-The Information (Technology),News & Media,https://www.theinformation.com/feed
 TechCrunch,News & Media,https://techcrunch.com/feed/
 The Verge (All),News & Media,https://www.theverge.com/rss/index.xml
 Ars Technica,News & Media,https://arstechnica.com/feed/
@@ -32,8 +29,6 @@ Techmeme (Aggregator),News & Media,https://www.techmeme.com/feed.xml
 Tom’s Hardware,Consumer & Hardware,https://www.tomshardware.com/feeds/all
 AnandTech,Consumer & Hardware,https://www.anandtech.com/rss/
 Phoronix,Consumer & Hardware,https://www.phoronix.com/rss.php
-Notebookcheck,Consumer & Hardware,https://www.notebookcheck.net/RSS-Feed-News.215.0.html
-HotHardware,Consumer & Hardware,https://hothardware.com/rss/all
 TweakTown (News),Consumer & Hardware,https://www.tweaktown.com/news-feed/
 TechPowerUp,Consumer & Hardware,https://www.techpowerup.com/rss/
 GSMArena (News/Reviews),Consumer & Hardware,https://www.gsmarena.com/rss-news-reviews.php3
@@ -42,15 +37,12 @@ Raspberry Pi (News),Consumer & Hardware,https://www.raspberrypi.com/news/feed/
 Hackaday,Consumer & Hardware,https://hackaday.com/blog/feed/
 Make: Magazine,Consumer & Hardware,https://makezine.com/feed/
 Adafruit (Blog),Consumer & Hardware,https://blog.adafruit.com/feed/
-SparkFun (News),Consumer & Hardware,https://www.sparkfun.com/feeds/news
 MacRumors,Consumer & Hardware,https://www.macrumors.com/macrumors.xml
-AppleInsider,Consumer & Hardware,https://appleinsider.com/rss
 Macworld,Consumer & Hardware,https://www.macworld.com/feed
 iMore,Consumer & Hardware,https://www.imore.com/rss.xml
 9to5Mac,Consumer & Hardware,https://9to5mac.com/feed/
 Android Authority,Consumer & Hardware,https://www.androidauthority.com/feed/
 Android Central,Consumer & Hardware,https://www.androidcentral.com/rss.xml
-Android Police,Consumer & Hardware,https://www.androidpolice.com/rss/all.xml
 SamMobile,Consumer & Hardware,https://www.sammobile.com/feed/
 9to5Google,Consumer & Hardware,https://9to5google.com/feed/
 Electrek,Consumer & Hardware,https://electrek.co/feed/
@@ -64,10 +56,8 @@ DZone (Home),Developer / OSS & Cloud,https://feeds.dzone.com/home
 Smashing Magazine,Developer / OSS & Cloud,https://www.smashingmagazine.com/feed/
 SitePoint,Developer / OSS & Cloud,https://www.sitepoint.com/feed/
 CSS-Tricks,Developer / OSS & Cloud,https://css-tricks.com/feed/
-IEEE Spectrum (All),Developer / OSS & Cloud,https://spectrum.ieee.org/feeds/all
 Krebs on Security (Dev-adjacent),Developer / OSS & Cloud,https://krebsonsecurity.com/feed/
 Schneier on Security,Developer / OSS & Cloud,https://www.schneier.com/feed/atom/
-freeCodeCamp (News),Developer / OSS & Cloud,https://www.freecodecamp.org/news/rss/
 Dev.to,Developer / OSS & Cloud,https://dev.to/feed
 Stack Overflow Blog,Developer / OSS & Cloud,https://stackoverflow.blog/feed/
 GitHub Blog,Developer / OSS & Cloud,https://github.blog/feed/
@@ -83,19 +73,12 @@ Cloudflare Blog,Developer / OSS & Cloud,https://blog.cloudflare.com/rss/
 Docker Blog,Developer / OSS & Cloud,https://www.docker.com/blog/feed/
 Kubernetes Blog,Developer / OSS & Cloud,https://kubernetes.io/feed.xml
 CNCF Blog,Developer / OSS & Cloud,https://www.cncf.io/feed/
-Linux Foundation,Developer / OSS & Cloud,https://www.linuxfoundation.org/feed/
 Red Hat Blog,Developer / OSS & Cloud,https://www.redhat.com/en/rss/blog
 Elastic Blog,Developer / OSS & Cloud,https://www.elastic.co/blog/feed
-Grafana Blog,Developer / OSS & Cloud,https://grafana.com/blog/feed.xml
-ClickHouse Blog,Developer / OSS & Cloud,https://clickhouse.com/blog/rss.xml
-PostgreSQL (Press/News),Developer / OSS & Cloud,https://www.postgresql.org/press/rss
-MySQL (Dev Blog),Developer / OSS & Cloud,https://dev.mysql.com/blog-archive/feed/
 MongoDB Blog,Developer / OSS & Cloud,https://www.mongodb.com/blog/rss
-Redis Blog,Developer / OSS & Cloud,https://redis.io/blog/index.xml
 Google AI Blog,Developer / OSS & Cloud,https://ai.googleblog.com/atom.xml
 Hugging Face Blog,Developer / OSS & Cloud,https://huggingface.co/blog/feed.xml
 KDNuggets,Developer / OSS & Cloud,https://www.kdnuggets.com/feed
 Towards Data Science,Developer / OSS & Cloud,https://towardsdatascience.com/feed
 Unity Blog,Developer / OSS & Cloud,https://blog.unity.com/feed
-Unreal Engine (News),Developer / OSS & Cloud,https://www.unrealengine.com/en-US/feed
-Godot (News),Developer / OSS & Cloud,https://godotengine.org/feeds/atom.xml
+Google News (Technology),News & Media,https://news.google.com/rss/search?q=technology&hl=en-US&gl=US&ceid=US:en

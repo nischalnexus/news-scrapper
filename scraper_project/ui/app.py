@@ -147,6 +147,7 @@ def _styled_scores_table(table: pd.DataFrame) -> pd.DataFrame:
         display["trendy_band"] = display["trendy_score"].apply(_score_badge)
 
     preferred_order = [
+        "SN",
         "title",
         "brand",
         "source",
@@ -165,10 +166,69 @@ def _styled_scores_table(table: pd.DataFrame) -> pd.DataFrame:
 
 def _score_table_column_config() -> dict[str, st.column_config.Column]:
     return {
+        "SN": st.column_config.NumberColumn("SN", help="Row number"),
         "url": st.column_config.LinkColumn("Link", display_text="Open", max_chars=60),
         "viral_band": st.column_config.TextColumn("Viral Band", help=_SCORE_BAND_HELP),
         "trendy_band": st.column_config.TextColumn("Trendy Band", help=_SCORE_BAND_HELP),
     }
+
+
+def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str]) -> None:
+    st.title("Catalog Manager")
+    if not catalog_path:
+        st.info("Set a catalog path in settings to manage categories.")
+        st.stop()
+
+    st.caption(f"Catalog file: {Path(catalog_path).name}")
+
+    display_df = catalog_df.rename(columns={"Brand Name": "Brand", "URL": "Feed URL"}).reset_index(drop=True)
+    st.dataframe(display_df, use_container_width=True, hide_index=True)
+
+    st.subheader("Add or Update Feed")
+    with st.form("catalog_add_form"):
+        brand_input = st.text_input("Brand name")
+        url_input = st.text_input("Feed URL")
+        category_input = st.text_input("Category")
+        submit_add = st.form_submit_button("Save feed")
+    if submit_add:
+        try:
+            updated_catalog = upsert_catalog_entry(catalog_df, brand_input, url_input, category_input)
+        except ValueError as exc:
+            st.error(str(exc))
+        else:
+            save_catalog_table(updated_catalog, catalog_path)
+            load_category_map.cache_clear()
+            st.success("Feed saved.")
+            st.experimental_rerun()
+
+    st.subheader("Delete Feed(s)")
+    if catalog_df.empty:
+        st.info("Add a feed above to begin.")
+    else:
+        site_options = {f"{row['Brand Name']} ({row['URL']})": row['URL'] for _, row in catalog_df.iterrows()}
+        selected_sites = st.multiselect("Select feeds to delete", list(site_options.keys()))
+        if st.button("Delete selected feeds"):
+            if not selected_sites:
+                st.info("Select at least one feed to delete.")
+            else:
+                updated_catalog = remove_catalog_entries(catalog_df, [site_options[label] for label in selected_sites])
+                save_catalog_table(updated_catalog, catalog_path)
+                load_category_map.cache_clear()
+                st.success("Selected feeds deleted.")
+                st.experimental_rerun()
+
+    st.subheader("Delete Category")
+    category_values = sorted({value for value in catalog_df["Category"].astype(str).str.strip() if value})
+    if category_values:
+        category_to_delete = st.selectbox("Category to delete", category_values)
+        if st.button("Delete category"):
+            updated_catalog = remove_catalog_category(catalog_df, category_to_delete)
+            save_catalog_table(updated_catalog, catalog_path)
+            load_category_map.cache_clear()
+            st.success("Category deleted.")
+            st.experimental_rerun()
+    else:
+        st.info("No categories defined yet.")
 
 def _ingest_and_store(cfg, ingest_hours: int) -> None:
     items = asyncio.run(ingest_async(cfg))
@@ -210,6 +270,14 @@ if has_uncategorized:
         category_options.append("Uncategorized")
 if not category_options:
     category_options = ["Uncategorized"]
+
+view_mode_default = st.session_state.get("view_mode", "Dashboard")
+view_mode = st.sidebar.selectbox("Mode", ["Dashboard", "Manage Catalog"], index=0 if view_mode_default == "Dashboard" else 1)
+st.session_state["view_mode"] = view_mode
+
+if view_mode == "Manage Catalog":
+    _render_catalog_manager(catalog_df, catalog_path)
+    st.stop()
 prev_category_selection = st.session_state.get("category_filter_selection")
 if prev_category_selection:
     category_default = [value for value in prev_category_selection if value in category_options]
@@ -219,70 +287,14 @@ else:
     category_default = category_options
 category_filter_selection = st.sidebar.multiselect("Categories", category_options, default=category_default)
 selected_categories = category_filter_selection or category_options
-
-if catalog_path:
-    with st.sidebar.expander("Manage categories & sites"):
-        st.caption(f"Catalog file: {Path(catalog_path).name}")
-        st.markdown("Add or update websites for each category.")
-        new_category_input = st.text_input("Category name", key="catalog_category_name")
-        new_brand_input = st.text_input("Brand / source name", key="catalog_brand_name")
-        new_url_input = st.text_input("Website URL", key="catalog_site_url")
-        manage_cols = st.columns(2)
-        with manage_cols[0]:
-            if st.button("Add / Update site", key="catalog_add_site_btn"):
-                try:
-                    updated_catalog = upsert_catalog_entry(catalog_df, new_brand_input, new_url_input, new_category_input)
-                except ValueError as exc:
-                    st.warning(str(exc))
-                else:
-                    save_catalog_table(updated_catalog, catalog_path)
-                    load_category_map.cache_clear()
-                    st.success("Catalog updated.")
-                    st.experimental_rerun()
-        with manage_cols[1]:
-            if st.button("Add category", key="catalog_add_category_btn"):
-                if not new_category_input.strip():
-                    st.warning("Provide a category name to add.")
-                else:
-                    updated_catalog = ensure_category_row(catalog_df, new_category_input)
-                    save_catalog_table(updated_catalog, catalog_path)
-                    load_category_map.cache_clear()
-                    st.success("Category added.")
-                    st.experimental_rerun()
-        existing_categories = sorted({cat for cat in catalog_df["Category"].astype(str).str.strip() if cat})
-        if existing_categories:
-            delete_category_choice = st.selectbox("Select category", options=existing_categories, key="catalog_delete_category_select")
-            category_rows = catalog_df[catalog_df["Category"].astype(str).str.lower() == delete_category_choice.lower()]
-            site_options = {
-                f"{(row['Brand Name'] or row['URL'])} ({row['URL']})": row['URL']
-                for _, row in category_rows.iterrows()
-                if str(row.get('URL', '')).strip()
-            }
-            selected_sites_to_delete = st.multiselect("Websites to delete", list(site_options.keys()), key="catalog_delete_sites_select")
-            if st.button("Delete selected sites", key="catalog_delete_sites_btn"):
-                updated_catalog = remove_catalog_entries(catalog_df, [site_options[label] for label in selected_sites_to_delete])
-                save_catalog_table(updated_catalog, catalog_path)
-                load_category_map.cache_clear()
-                st.success("Selected sites removed.")
-                st.experimental_rerun()
-            if st.button("Delete category", key="catalog_delete_category_btn"):
-                updated_catalog = remove_catalog_category(catalog_df, delete_category_choice)
-                save_catalog_table(updated_catalog, catalog_path)
-                load_category_map.cache_clear()
-                st.success("Category removed.")
-                st.experimental_rerun()
-        else:
-            st.info("No categories defined yet; add one above.")
-else:
-    st.sidebar.info("Set a catalog path in settings to manage categories.")
-
-
+limit_ingest_default = st.session_state.get("limit_ingest_to_categories", False)
+limit_ingest_to_categories = st.sidebar.checkbox("Ingest only selected categories", value=limit_ingest_default)
 stored_filters = st.session_state.get("filters_apply", {})
 keyword_default = st.session_state.get("keyword_filter", "")
 hashtag_default = st.session_state.get("hashtag_filter", "")
 
 ingest_default = int(stored_filters.get("ingest_hours", 24))
-ingest_hours = st.sidebar.slider("Fetch window (hours)", 1, 168, ingest_default)
+ingest_hours = st.sidebar.slider("Fetch window (hours, 0 = entire feed)", 0, 168, ingest_default)
 
 time_unit_default = stored_filters.get("time_unit", "Hours")
 time_unit = st.sidebar.selectbox(
@@ -298,6 +310,8 @@ else:
     time_value_default = int(stored_filters.get("time_value", 60))
     time_window_value = st.sidebar.slider("Time window (minutes)", 5, 720, time_value_default)
 
+apply_time_filter = st.sidebar.checkbox("Apply time window filter", value=stored_filters.get("apply_time_filter", True))
+
 keyword_filter = st.sidebar.text_input("Keyword contains", value=keyword_default)
 hashtag_filter = st.sidebar.text_input("Hashtag contains", value=hashtag_default)
 
@@ -306,20 +320,25 @@ if st.sidebar.button("Apply"):
         "ingest_hours": ingest_hours,
         "time_unit": time_unit,
         "time_value": time_window_value,
+        "apply_time_filter": apply_time_filter,
     }
     st.session_state["keyword_filter"] = keyword_filter
     st.session_state["hashtag_filter"] = hashtag_filter
     st.session_state["category_filter_selection"] = selected_categories
+    st.session_state["limit_ingest_to_categories"] = limit_ingest_to_categories
     try:
-        effective_categories = set(selected_categories or category_options)
-        sources_for_ingest = [
-            source
-            for source in cfg.sources
-            if _category_label(getattr(source, "category", None)) in effective_categories
-        ]
-        if not sources_for_ingest:
-            raise RuntimeError("No sources match the selected categories.")
         cfg_ingest = cfg.model_copy(deep=True)
+        if limit_ingest_to_categories:
+            effective_categories = set(selected_categories or category_options)
+            sources_for_ingest = [
+                source
+                for source in cfg.sources
+                if _category_label(getattr(source, "category", None)) in effective_categories
+            ]
+            if not sources_for_ingest:
+                raise RuntimeError("No sources match the selected categories.")
+        else:
+            sources_for_ingest = list(cfg.sources)
         cfg_ingest.sources = sources_for_ingest
         with st.spinner("Fetching fresh content..."):
             _ingest_and_store(cfg_ingest, ingest_hours)
@@ -396,7 +415,7 @@ if keyword_filter and "keywords" in filtered.columns:
     filtered = filtered[filtered["keywords"].str.contains(keyword_filter, case=False, na=False)]
 if hashtag_filter and "hashtags" in filtered.columns:
     filtered = filtered[filtered["hashtags"].str.contains(hashtag_filter, case=False, na=False)]
-if "published_at" in filtered.columns:
+if apply_time_filter and "published_at" in filtered.columns:
     filtered = filtered[filtered["published_at"] >= recent_cutoff]
 
 trending_tab, trends_tab, heatmap_tab, predictive_tab = st.tabs([
@@ -424,8 +443,7 @@ with trending_tab:
         ]
         available_top_columns = [col for col in top_columns if col in filtered.columns]
         top_v = (
-            filtered.sort_values("viral_score", ascending=False)
-            .head(20)[available_top_columns]
+            filtered.sort_values("viral_score", ascending=False)[available_top_columns]
             .rename(
                 columns={
                     "display_title": "title",
@@ -439,7 +457,8 @@ with trending_tab:
             for col in ["title", "brand", "source_id", "category", "published_at", "viral_score", "trendy_score", "quality_score", "url_canonical"]
             if col in top_v.columns
         ]
-        top_v_display = top_v.reindex(columns=display_columns)
+        top_v_display = top_v.reindex(columns=display_columns).reset_index(drop=True)
+        top_v_display.insert(0, "SN", range(1, len(top_v_display) + 1))
         if {"viral_score", "trendy_score"}.issubset(top_v_display.columns):
             st.dataframe(
                 _styled_scores_table(top_v_display),
@@ -542,7 +561,8 @@ with predictive_tab:
                 for col in ["title", "brand", "source_id", "category", "published_at", "viral_score", "trendy_score", "quality_score", "url_canonical"]
                 if col in candidates_table.columns
             ]
-            candidates_display = candidates_table.reindex(columns=display_columns)
+            candidates_display = candidates_table.reindex(columns=display_columns).reset_index(drop=True)
+            candidates_display.insert(0, "SN", range(1, len(candidates_display) + 1))
             if {"viral_score", "trendy_score"}.issubset(candidates_display.columns):
                 st.dataframe(
                     _styled_scores_table(candidates_display),
@@ -591,7 +611,8 @@ with predictive_tab:
                 for col in ["title", "brand", "source_id", "category", "published_at", "viral_score", "trendy_score", "url_canonical"]
                 if col in digest.columns
             ]
-            digest_display = digest.reindex(columns=digest_columns)
+            digest_display = digest.reindex(columns=digest_columns).reset_index(drop=True)
+            digest_display.insert(0, "SN", range(1, len(digest_display) + 1))
             if {"viral_score", "trendy_score"}.issubset(digest_display.columns):
                 st.dataframe(
                     _styled_scores_table(digest_display),
@@ -601,5 +622,8 @@ with predictive_tab:
                 )
             else:
                 st.dataframe(digest_display, width='stretch', hide_index=True)
+
+
+
 
 
