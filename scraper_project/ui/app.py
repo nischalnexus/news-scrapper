@@ -174,6 +174,7 @@ def _score_table_column_config() -> dict[str, st.column_config.Column]:
 
 
 
+
 def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str]) -> None:
     st.title("Catalog Manager")
     if not catalog_path:
@@ -197,13 +198,9 @@ def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str
         url_input = st.text_input("Feed URL", key="catalog_url_input")
         existing_categories = sorted({value for value in catalog_df["Category"].astype(str).str.strip() if value})
         category_options = [''] + existing_categories
-        category_input = st.selectbox(
-            "Category",
-            options=category_options,
-            index=category_options.index(st.session_state.get("catalog_category_select", ""))
-                if st.session_state.get("catalog_category_select", "") in category_options else 0,
-            key="catalog_category_select",
-        )
+        if st.session_state["catalog_category_select"] not in category_options:
+            st.session_state["catalog_category_select"] = ''
+        category_input = st.selectbox("Category", options=category_options, key="catalog_category_select")
         submit_add = st.form_submit_button("Save feed")
     if submit_add:
         try:
@@ -223,7 +220,11 @@ def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str
         st.info("Add a feed above to begin.")
     else:
         site_options = {f"{row['Brand Name']} ({row['URL']})": row['URL'] for _, row in catalog_df.iterrows()}
-        selected_sites = st.multiselect("Select feeds to delete", list(site_options.keys()), key="catalog_delete_feed_select")
+        selected_sites = st.multiselect(
+            "Select feeds to delete",
+            list(site_options.keys()),
+            key="catalog_delete_feed_select",
+        )
         if st.button("Delete selected feeds", key="catalog_delete_feed_button"):
             if not selected_sites:
                 st.info("Select at least one feed to delete.")
@@ -253,11 +254,7 @@ def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str
     st.subheader("Delete Category")
     category_values = sorted({value for value in catalog_df["Category"].astype(str).str.strip() if value})
     if category_values:
-        category_to_delete = st.selectbox(
-            "Category to delete",
-            category_values,
-            key="catalog_delete_category_select",
-        )
+        category_to_delete = st.selectbox("Category to delete", category_values, key="catalog_delete_category_select")
         if st.button("Delete category", key="catalog_delete_category_button"):
             updated_catalog = remove_catalog_category(catalog_df, category_to_delete)
             save_catalog_table(updated_catalog, catalog_path)
@@ -266,6 +263,7 @@ def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str
             st.rerun()
     else:
         st.info("No categories defined yet.")
+
 def _ingest_and_store(cfg, ingest_hours: int) -> None:
     items = asyncio.run(ingest_async(cfg))
     if ingest_hours:
@@ -329,8 +327,13 @@ stored_filters = st.session_state.get("filters_apply", {})
 keyword_default = st.session_state.get("keyword_filter", "")
 hashtag_default = st.session_state.get("hashtag_filter", "")
 
-ingest_default = int(stored_filters.get("ingest_hours", 24))
-ingest_hours = st.sidebar.slider("Fetch window (hours, 0 = entire feed)", 0, 168, ingest_default)
+ingest_default_total = stored_filters.get("ingest_hours_total", stored_filters.get("ingest_hours", 24))
+ingest_default_hours = int(ingest_default_total)
+ingest_default_minutes = int(round((ingest_default_total - ingest_default_hours) * 60))
+ingest_default_minutes = min(max(ingest_default_minutes, 0), 59)
+ingest_hours_value = int(st.sidebar.number_input("Fetch window hours", min_value=0, max_value=168, value=ingest_default_hours, step=1))
+ingest_minutes_value = int(st.sidebar.number_input("Fetch window minutes", min_value=0, max_value=59, value=ingest_default_minutes, step=1))
+ingest_hours = float(ingest_hours_value) + float(ingest_minutes_value) / 60.0
 
 time_unit_default = stored_filters.get("time_unit", "Hours")
 time_unit = st.sidebar.selectbox(
@@ -354,6 +357,9 @@ hashtag_filter = st.sidebar.text_input("Hashtag contains", value=hashtag_default
 if st.sidebar.button("Apply"):
     st.session_state["filters_apply"] = {
         "ingest_hours": ingest_hours,
+        "ingest_hours_total": ingest_hours,
+        "ingest_hours_hours": ingest_hours_value,
+        "ingest_hours_minutes": ingest_minutes_value,
         "time_unit": time_unit,
         "time_value": time_window_value,
         "apply_time_filter": apply_time_filter,
