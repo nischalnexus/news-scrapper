@@ -20,6 +20,7 @@ import streamlit as st
 from scraper_project.config import load_settings
 from scraper_project.pipeline.runner import ingest_async
 from scraper_project.pipeline.storage import load_dataframe, write_items
+from scraper_project.models import SourceConfig
 
 from scraper_project.utils.categories import (
     ensure_category_row,
@@ -322,6 +323,7 @@ else:
 category_filter_selection = st.sidebar.multiselect("Categories", category_options, default=category_default)
 selected_categories = category_filter_selection or category_options
 limit_ingest_default = st.session_state.get("limit_ingest_to_categories", False)
+
 limit_ingest_to_categories = st.sidebar.checkbox("Ingest only selected categories", value=limit_ingest_default)
 stored_filters = st.session_state.get("filters_apply", {})
 keyword_default = st.session_state.get("keyword_filter", "")
@@ -334,6 +336,43 @@ ingest_default_minutes = min(max(ingest_default_minutes, 0), 59)
 ingest_hours_value = int(st.sidebar.number_input("Fetch window hours", min_value=0, max_value=168, value=ingest_default_hours, step=1))
 ingest_minutes_value = int(st.sidebar.number_input("Fetch window minutes", min_value=0, max_value=59, value=ingest_default_minutes, step=1))
 ingest_hours = float(ingest_hours_value) + float(ingest_minutes_value) / 60.0
+
+custom_notice = st.sidebar.empty()
+with st.sidebar.expander("Ingest single source"):
+    custom_type = st.selectbox("Source type", ["rss", "web", "web (single page)"], key="custom_source_type", index=0 if st.session_state.get("custom_source_type") in (None, "rss") else (1 if st.session_state.get("custom_source_type") == "web" else 2))
+    custom_url = st.text_input("Feed URL", key="custom_source_url")
+    custom_brand_default = st.session_state.get("custom_source_brand", "") or (_brand_from_url(custom_url) if custom_url else "")
+    custom_brand = st.text_input("Brand name", value=custom_brand_default, key="custom_source_brand")
+    custom_category = st.text_input("Category", key="custom_source_category")
+    custom_ingest_button = st.button("Ingest custom source", key="custom_source_button")
+if custom_ingest_button:
+    if not custom_url.strip():
+        custom_notice.warning("Enter a feed URL.")
+    else:
+        try:
+            selected_type = st.session_state.get("custom_source_type", "rss")
+            source_type = "web" if selected_type.startswith("web") else selected_type
+            source_kwargs = {
+                "type": source_type,
+                "url": custom_url.strip(),
+                "brand_name": custom_brand.strip() or _brand_from_url(custom_url),
+                "category": custom_category.strip() or None,
+                "tags": ["custom"]
+            }
+            if source_type == "web":
+                if selected_type == "web":
+                    source_kwargs["crawl"] = {"depth": 1, "max_pages": 5, "render": False}
+                else:  # single page
+                    source_kwargs["crawl"] = {"depth": 0, "max_pages": 1, "render": False}
+            custom_source = SourceConfig(**{k: v for k, v in source_kwargs.items() if v not in (None, "")})
+            cfg_custom = cfg.model_copy(deep=True)
+            cfg_custom.sources = [custom_source]
+            _ingest_and_store(cfg_custom, ingest_hours)
+            for key in ("custom_source_type", "custom_source_url", "custom_source_brand", "custom_source_category"):
+                st.session_state.pop(key, None)
+            custom_notice.success("Custom source ingested.")
+        except Exception as exc:
+            custom_notice.error(f"Custom ingestion failed: {exc}")
 
 time_unit_default = stored_filters.get("time_unit", "Hours")
 time_unit = st.sidebar.selectbox(
@@ -664,6 +703,7 @@ with predictive_tab:
                 )
             else:
                 st.dataframe(digest_display, width='stretch', hide_index=True)
+
 
 
 
