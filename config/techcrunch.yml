@@ -1,0 +1,8 @@
+sources:
+  - type: web
+    url: https://techcrunch.com/
+    crawl:
+      depth: 1
+      max_pages: 5
+      render: true
+    tags: [news, web]

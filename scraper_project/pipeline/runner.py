@@ -5,6 +5,7 @@ from typing import List
 
 from ..models import ContentItem, Settings
 from ..utils.logging import get_logger
+from ..utils.async_tools import ensure_proactor_event_loop_policy
 from .dedupe import dedupe_items
 from .fetcher import run_connectors
 from .normalizer import normalize_items
@@ -21,4 +22,5 @@ async def ingest_async(settings: Settings) -> List[ContentItem]:
 
 
 def ingest(settings: Settings) -> List[ContentItem]:
+    ensure_proactor_event_loop_policy()
     return asyncio.run(ingest_async(settings))

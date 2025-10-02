@@ -19,6 +19,7 @@ import streamlit as st
 
 from scraper_project.config import load_settings
 from scraper_project.pipeline.runner import ingest_async
+from scraper_project.utils.async_tools import ensure_proactor_event_loop_policy
 from scraper_project.pipeline.storage import load_dataframe, write_items
 from scraper_project.models import SourceConfig
 
@@ -266,6 +267,7 @@ def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str
         st.info("No categories defined yet.")
 
 def _ingest_and_store(cfg, ingest_hours: int) -> None:
+    ensure_proactor_event_loop_policy()
     items = asyncio.run(ingest_async(cfg))
     if ingest_hours:
         cutoff = datetime.now(timezone.utc) - timedelta(hours=ingest_hours)
@@ -344,6 +346,20 @@ with st.sidebar.expander("Ingest single source"):
     custom_brand_default = st.session_state.get("custom_source_brand", "") or (_brand_from_url(custom_url) if custom_url else "")
     custom_brand = st.text_input("Brand name", value=custom_brand_default, key="custom_source_brand")
     custom_category = st.text_input("Category", key="custom_source_category")
+    render_supported = custom_type.startswith("web")
+    if render_supported:
+        default_render = custom_type == "web (single page)"
+        if st.session_state.get("_custom_render_last_type") != custom_type:
+            st.session_state["_custom_render_last_type"] = custom_type
+            st.session_state["custom_source_render"] = default_render
+        st.checkbox(
+            "Render with Playwright (JS websites)",
+            key="custom_source_render",
+            help="Use Playwright to render JavaScript-heavy pages. Slower but more reliable for dynamic sites.",
+        )
+    else:
+        st.session_state.pop("custom_source_render", None)
+        st.session_state.pop("_custom_render_last_type", None)
     custom_ingest_button = st.button("Ingest custom source", key="custom_source_button")
 if custom_ingest_button:
     if not custom_url.strip():
@@ -360,15 +376,18 @@ if custom_ingest_button:
                 "tags": ["custom"]
             }
             if source_type == "web":
+                render_enabled = bool(st.session_state.get("custom_source_render", selected_type == "web (single page)"))
                 if selected_type == "web":
-                    source_kwargs["crawl"] = {"depth": 1, "max_pages": 5, "render": False}
+                    source_kwargs["crawl"] = {"depth": 1, "max_pages": 5, "render": render_enabled}
                 else:  # single page
-                    source_kwargs["crawl"] = {"depth": 0, "max_pages": 1, "render": False}
+                    source_kwargs["crawl"] = {"depth": 0, "max_pages": 1, "render": render_enabled}
             custom_source = SourceConfig(**{k: v for k, v in source_kwargs.items() if v not in (None, "")})
             cfg_custom = cfg.model_copy(deep=True)
             cfg_custom.sources = [custom_source]
             _ingest_and_store(cfg_custom, ingest_hours)
             for key in ("custom_source_type", "custom_source_url", "custom_source_brand", "custom_source_category"):
+                st.session_state.pop(key, None)
+            for key in ("custom_source_render", "_custom_render_last_type"):
                 st.session_state.pop(key, None)
             custom_notice.success("Custom source ingested.")
         except Exception as exc:
@@ -452,7 +471,13 @@ brand_from_meta = metadata_series.apply(lambda meta: (meta.get("brand_name") or 
 if "published_at" in df.columns:
     df["published_at"] = pd.to_datetime(df["published_at"], errors="coerce", utc=True)
     df["published_hour"] = df["published_at"].dt.floor("h")
-    df["published_at_display"] = df["published_at"].dt.strftime("%Y-%m-%d %H:%M:%S %Z")
+    local_tz = datetime.now().astimezone().tzinfo
+    if local_tz is not None:
+        df["published_at_display"] = (
+            df["published_at"].dt.tz_convert(local_tz).dt.strftime("%Y-%m-%d %I:%M:%S %p %Z")
+        )
+    else:
+        df["published_at_display"] = df["published_at"].dt.strftime("%Y-%m-%d %I:%M:%S %p %Z")
 else:
     df["published_at_display"] = ""
 

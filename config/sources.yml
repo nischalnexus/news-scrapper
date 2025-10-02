@@ -7,7 +7,7 @@ sources:
     crawl:
       depth: 1
       max_pages: 15
-      render: false
+      render: true
     tags: [news, web]
   - type: mastodon
     instance: mastodon.social

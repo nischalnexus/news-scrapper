@@ -95,6 +95,11 @@ class WebSpiderConnector(BaseConnector):
         return {"User-Agent": "OpenScraper/1.0"}
 
     async def _fetch_page(self, client: httpx.AsyncClient, url: str) -> Optional[str]:
+        use_render = bool(self.source.crawl.get("render", False)) and _PLAYWRIGHT_AVAILABLE
+        if use_render:
+            html = await self._render_with_playwright(url)
+            if html:
+                return html
         try:
             response = await client.get(url)
             response.raise_for_status()
@@ -102,7 +107,7 @@ class WebSpiderConnector(BaseConnector):
                 return response.text
         except httpx.HTTPError as exc:
             get_logger(__name__).warning("HTTP fetch failed", extra={"url": url, "error": str(exc)})
-        if _PLAYWRIGHT_AVAILABLE and self.source.crawl.get("render", False):
+        if use_render:
             return await self._render_with_playwright(url)
         return None
 
@@ -113,7 +118,10 @@ class WebSpiderConnector(BaseConnector):
             async with async_playwright() as p:
                 browser = await p.chromium.launch(headless=True)
                 page = await browser.new_page()
-                await page.goto(url, wait_until="networkidle")
+                try:
+                    await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+                except Exception as exc:  # pylint: disable=broad-except
+                    get_logger(__name__).info("Playwright goto fallback", extra={"url": url, "error": str(exc)})
                 html = await page.content()
                 await browser.close()
                 return html

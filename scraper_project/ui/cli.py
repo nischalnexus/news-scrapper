@@ -13,6 +13,7 @@ from ..pipeline.runner import ingest_async
 from ..pipeline.scoring import score_items
 from ..pipeline.storage import export_items, load_items, load_dataframe, write_items
 from ..utils.logging import configure_logging
+from ..utils.async_tools import ensure_proactor_event_loop_policy
 
 app = typer.Typer(add_completion=False, help="CLI utilities for the scraper project")
 
@@ -22,13 +23,22 @@ def ingest(
     sources: Path = typer.Option(Path("config/sources.yml"), help="Path to sources configuration"),
     settings: Path = typer.Option(Path("config/settings.yml"), help="Path to runtime settings"),
     hours: int = typer.Option(24, min=1, help="Only keep items published within the last N hours"),
+    include_catalog: bool = typer.Option(True, help="Include catalog-derived sources in addition to the explicit list"),
+    include_custom: bool = typer.Option(True, help="Include custom category sources"),
+    custom_sources: Optional[Path] = typer.Option(None, help="Optional path to custom sources file"),
     dry_run: bool = typer.Option(False, help="Do not persist results to storage"),
     log_level: str = typer.Option("INFO", help="Logging level"),
 ):
     """Run connectors, compute scores, and store results."""
 
     configure_logging(log_level)
-    cfg = load_settings(sources, settings)
+    cfg = load_settings(
+        sources,
+        settings,
+        include_catalog=include_catalog,
+        include_custom=include_custom,
+        custom_sources_path=custom_sources,
+    )
 
     async def _run() -> list[ContentItem]:
         items = await ingest_async(cfg)
@@ -42,6 +52,7 @@ def ingest(
             typer.echo(f"Persisted {len(items)} items to {cfg.storage.path}")
         return items
 
+    ensure_proactor_event_loop_policy()
     asyncio.run(_run())
 
 
