@@ -1,223 +1,93 @@
-﻿sources:
+sources:
 - type: rss
-  url: https://techcrunch.com/feed/
-  brand_name: TechCrunch
-  tags:
-  - custom
-  - rss
-  - tech
+  url: https://forum.level1techs.com/latest.rss
+  brand_name: Level1Techs (Forum)
+  tags: [custom, rss, hardware]
 - type: rss
-  url: https://www.reuters.com/technology/rss
-  brand_name: Reuters Technology
-  tags:
-  - custom
-  - rss
-  - news
-- type: rss
-  url: https://www.pcmag.com/feeds/all
-  brand_name: PCMag
-  tags:
-  - custom
-  - rss
-  - tech
-- type: web
-  url: https://www.theinformation.com/
-  brand_name: The Information
-  crawl:
-    depth: 1
-    max_pages: 5
-    render: true
-  tags:
-  - custom
-  - web
-  - business
-- type: rss
-  url: https://feeds.a.dj.com/rss/RSSWSJD.xml
-  brand_name: WSJ Technology
-  tags:
-  - custom
-  - rss
-  - business
-- type: rss
-  url: https://appleinsider.com/rss
-  brand_name: AppleInsider
-  tags:
-  - custom
-  - rss
-  - apple
-- type: rss
-  url: https://www.extremetech.com/feed
-  brand_name: ExtremeTech
-  tags:
-  - custom
-  - rss
-  - hardware
-- type: rss
-  url: https://venturebeat.com/feed/
-  brand_name: VentureBeat
-  tags:
-  - custom
-  - rss
-  - business
-- type: rss
-  url: https://www.sitepoint.com/feed/
-  brand_name: SitePoint
-  tags:
-  - custom
-  - rss
-  - dev
-- type: rss
-  url: https://linustechtips.com/rss/news
-  brand_name: Linus Tech Tips (News)
-  tags:
-  - custom
-  - rss
-  - hardware
-- type: rss
-  url: https://www.tweaktown.com/rss/news.xml
+  url: https://www.tweaktown.com/feeds/news-mf.xml
   brand_name: TweakTown
-  tags:
-  - custom
-  - rss
-  - hardware
-- type: web
-  url: https://jax.readthedocs.io/
-  brand_name: JAX
-  crawl:
-    depth: 1
-    max_pages: 3
-    render: false
-  tags:
-  - custom
-  - web
-  - docs
+  tags: [custom, rss, hardware]
 - type: rss
-  url: https://alternativeto.net/rss/tech-news/
-  brand_name: AlternativeTo
-  tags:
-  - custom
-  - rss
-  - apps
-- type: web
-  url: https://www.notebookreview.com/
-  brand_name: NotebookReview (archived)
-  crawl:
-    depth: 1
-    max_pages: 5
-    render: true
-  tags:
-  - custom
-  - web
-  - hardware
+  url: https://feeds.feedburner.com/pcmag
+  brand_name: PCMag
+  tags: [custom, rss, tech]
 - type: rss
-  url: https://semiaccurate.com/feed/
-  brand_name: SemiAccurate
-  tags:
-  - custom
-  - rss
-  - hardware
+  url: https://technode.com/feed/
+  brand_name: TechNode (China Tech)
+  tags: [custom, rss, asia]
 - type: rss
-  url: https://netflixtechblog.com/feed
-  brand_name: Netflix TechBlog
-  tags:
-  - custom
-  - rss
-  - engineering
+  url: https://appleinsider.com/rss/news
+  brand_name: AppleInsider (News)
+  tags: [custom, rss, apple]
 - type: rss
-  url: https://hothardware.com/rss/all
-  brand_name: HotHardware
-  tags:
-  - custom
-  - rss
-  - hardware
+  url: https://feeds.feedburner.com/venturebeat/SZYF
+  brand_name: VentureBeat
+  tags: [custom, rss, business]
 - type: rss
-  url: https://rss.app/feeds/aqxmlHJ1VZq3cF9B.xml
-  brand_name: Notebookcheck
-  tags:
-  - custom
-  - rss
-  - hardware
-- type: rss
-  url: https://www.sparkfun.com/feeds/news
-  brand_name: SparkFun (News)
-  tags:
-  - custom
-  - rss
-  - maker
-- type: rss
-  url: https://www.androidpolice.com/feed/
-  brand_name: Android Police
-  tags:
-  - custom
-  - rss
-  - mobile
-- type: rss
-  url: https://spectrum.ieee.org/feeds/latest
-  brand_name: IEEE Spectrum (All)
-  tags:
-  - custom
-  - rss
-  - engineering
-- type: rss
-  url: https://www.freecodecamp.org/news/rss/
-  brand_name: freeCodeCamp (News)
-  tags:
-  - custom
-  - rss
-  - education
-- type: rss
-  url: https://grafana.com/blog/rss.xml
-  brand_name: Grafana Blog
-  tags:
-  - custom
-  - rss
-  - observability
-- type: rss
-  url: https://clickhouse.com/blog/rss.xml
+  url: https://clickhouse.com/rss.xml
   brand_name: ClickHouse Blog
-  tags:
-  - custom
-  - rss
-  - databases
+  tags: [custom, rss, databases]
 - type: rss
-  url: https://www.unrealengine.com/en-US/feed
-  brand_name: Unreal Engine (News)
-  tags:
-  - custom
-  - rss
-  - games
+  url: https://blog.google/technology/ai/rss/?hl=en
+  brand_name: Google AI Blog
+  tags: [custom, rss, ai]
 - type: rss
-  url: https://godotengine.org/feeds/atom.xml
-  brand_name: Godot (News)
-  tags:
-  - custom
-  - rss
-  - games
+  url: https://www.digitaltrends.com/feed/rss/
+  brand_name: Digital Trends
+  tags: [custom, rss, tech]
 - type: rss
-  url: https://www.postgresql.org/press/rss
-  brand_name: PostgreSQL (Press/News)
-  tags:
-  - custom
-  - rss
-  - databases
+  url: https://www.techpowerup.com/rss/news
+  brand_name: TechPowerUp (News)
+  tags: [custom, rss, hardware]
 - type: rss
-  url: https://dev.mysql.com/blog-archive/feed/
-  brand_name: MySQL (Dev Blog)
-  tags:
-  - custom
-  - rss
-  - databases
+  url: https://electrek.co/feed/
+  brand_name: Electrek (EV)
+  tags: [custom, rss, ev]
 - type: rss
-  url: https://www.linuxfoundation.org/feed/
-  brand_name: Linux Foundation
-  tags:
-  - custom
-  - rss
-  - open-source
+  url: https://www.csoonline.com/feed/
+  brand_name: CSO Online
+  tags: [custom, rss, security]
 - type: rss
-  url: https://redis.io/blog/index.xml
-  brand_name: Redis Blog
-  tags:
-  - custom
-  - rss
-  - databases
+  url: https://www.bleepingcomputer.com/feed/
+  brand_name: BleepingComputer
+  tags: [custom, rss, security]
+- type: rss
+  url: https://www.darkreading.com/rss.xml
+  brand_name: Dark Reading
+  tags: [custom, rss, security]
+- type: rss
+  url: https://securelist.com/feed/
+  brand_name: Securelist (Kaspersky)
+  tags: [custom, rss, security]
+- type: rss
+  url: https://www.theguardian.com/technology/rss
+  brand_name: The Guardian Technology
+  tags: [custom, rss, news]
+- type: rss
+  url: https://blog.google/rss/?hl=en
+  brand_name: Google Keyword Blog
+  tags: [custom, rss, news]
+- type: rss
+  url: https://blogs.oracle.com/mysql/rss
+  brand_name: MySQL Blog
+  tags: [custom, rss, databases]
+- type: rss
+  url: https://unity.com/blog/rss
+  brand_name: Unity Blog
+  tags: [custom, rss, games]
+- type: rss
+  url: https://blog.adafruit.com/feed/
+  brand_name: Adafruit Blog
+  tags: [custom, rss, maker]
+- type: rss
+  url: https://www.exploit-db.com/rss.xml
+  brand_name: Exploit Database
+  tags: [custom, rss, security]
+- type: rss
+  url: https://www.cisa.gov/cybersecurity-advisories/cybersecurity-advisories.xml
+  brand_name: CISA Cybersecurity Advisories
+  tags: [custom, rss, security]
+- type: rss
+  url: https://www.tomshardware.com/feeds/all
+  brand_name: Tom's Hardware
+  tags: [custom, rss, hardware]

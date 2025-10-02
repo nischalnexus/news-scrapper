@@ -9,7 +9,7 @@ import typer
 
 from ..config import load_settings
 from ..models import ContentItem, Settings
-from ..pipeline.runner import ingest_async
+from ..pipeline.runner import ingest_async, filter_items_by_hours
 from ..pipeline.scoring import score_items
 from ..pipeline.storage import export_items, load_items, load_dataframe, write_items
 from ..utils.logging import configure_logging
@@ -103,3 +103,4 @@ def show(
 
 if __name__ == "__main__":  # pragma: no cover
     app()
+

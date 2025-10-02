@@ -11,7 +11,7 @@ PCWorld,News & Media,https://www.pcworld.com/index.rss
 Tom’s Guide,News & Media,https://www.tomsguide.com/feeds/all
 The Next Web,News & Media,https://thenextweb.com/feed
 TechRadar,News & Media,https://www.techradar.com/rss
-Digital Trends,News & Media,https://www.digitaltrends.com/feed/
+Digital Trends,News & Media,https://www.digitaltrends.com/feed/rss/
 Neowin,News & Media,https://www.neowin.net/news/rss/
 How-To Geek,News & Media,https://www.howtogeek.com/feed/
 MakeUseOf,News & Media,https://www.makeuseof.com/feed/
@@ -26,10 +26,10 @@ SiliconANGLE,News & Media,https://siliconangle.com/feed/
 GeekWire,News & Media,https://www.geekwire.com/feed/
 Techmeme (Aggregator),News & Media,https://www.techmeme.com/feed.xml
 Tom’s Hardware,Consumer & Hardware,https://www.tomshardware.com/feeds/all
-AnandTech,Consumer & Hardware,https://www.anandtech.com/rss/
+PC Gamer,Consumer & Hardware,https://www.pcgamer.com/rss/
 Phoronix,Consumer & Hardware,https://www.phoronix.com/rss.php
 TweakTown (News),Consumer & Hardware,https://www.tweaktown.com/news-feed/
-TechPowerUp,Consumer & Hardware,https://www.techpowerup.com/rss/
+TechPowerUp,Consumer & Hardware,https://www.techpowerup.com/rss/news
 GSMArena (News/Reviews),Consumer & Hardware,https://www.gsmarena.com/rss-news-reviews.php3
 iFixit (News),Consumer & Hardware,https://www.ifixit.com/News/feed
 Raspberry Pi (News),Consumer & Hardware,https://www.raspberrypi.com/news/feed/
@@ -47,7 +47,7 @@ SamMobile,Consumer & Hardware,https://www.sammobile.com/feed/
 Electrek,Consumer & Hardware,https://electrek.co/feed/
 CleanTechnica,Consumer & Hardware,https://cleantechnica.com/feed/
 ServeTheHome,Consumer & Hardware,https://www.servethehome.com/feed/
-Level1Techs (News),Consumer & Hardware,https://level1techs.com/rss.xml
+Level1Techs (Forum),Consumer & Hardware,https://forum.level1techs.com/latest.rss
 OMG! Ubuntu!,Consumer & Hardware,https://www.omgubuntu.co.uk/feed
 It’s FOSS,Consumer & Hardware,https://itsfoss.com/feed/
 The New Stack,Developer / OSS & Cloud,https://thenewstack.io/feed/
@@ -60,12 +60,12 @@ Stack Overflow Blog,Developer / OSS & Cloud,https://stackoverflow.blog/feed/
 GitHub Blog,Developer / OSS & Cloud,https://github.blog/feed/
 GitLab Blog,Developer / OSS & Cloud,https://about.gitlab.com/atom.xml
 Mozilla Hacks,Developer / OSS & Cloud,https://hacks.mozilla.org/feed/
-MDN Blog,Developer / OSS & Cloud,https://developer.mozilla.org/en-US/blog/feed/
+Google Developers Blog,Developer / OSS & Cloud,https://developers.googleblog.com/feeds/posts/default/?alt=rss
 Google Developers Blog,Developer / OSS & Cloud,https://developers.googleblog.com/atom.xml
 Microsoft Dev Blogs,Developer / OSS & Cloud,https://devblogs.microsoft.com/feed/
 AWS News Blog,Developer / OSS & Cloud,https://aws.amazon.com/blogs/aws/feed/
 Azure Blog,Developer / OSS & Cloud,https://azure.microsoft.com/en-us/blog/feed/
-Google Cloud Blog,Developer / OSS & Cloud,https://cloud.google.com/blog/rss/
+Google Cloud Blog,Developer / OSS & Cloud,https://feeds.feedburner.com/googlecloudplatform
 Cloudflare Blog,Developer / OSS & Cloud,https://blog.cloudflare.com/rss/
 Docker Blog,Developer / OSS & Cloud,https://www.docker.com/blog/feed/
 Kubernetes Blog,Developer / OSS & Cloud,https://kubernetes.io/feed.xml
@@ -73,7 +73,7 @@ CNCF Blog,Developer / OSS & Cloud,https://www.cncf.io/feed/
 Red Hat Blog,Developer / OSS & Cloud,https://www.redhat.com/en/rss/blog
 Elastic Blog,Developer / OSS & Cloud,https://www.elastic.co/blog/feed
 MongoDB Blog,Developer / OSS & Cloud,https://www.mongodb.com/blog/rss
-Google AI Blog,Developer / OSS & Cloud,https://ai.googleblog.com/atom.xml
+Google AI Blog,Developer / OSS & Cloud,https://blog.google/technology/ai/rss/?hl=en
 Hugging Face Blog,Developer / OSS & Cloud,https://huggingface.co/blog/feed.xml
 KDNuggets,Developer / OSS & Cloud,https://www.kdnuggets.com/feed
 Towards Data Science,Developer / OSS & Cloud,https://towardsdatascience.com/feed
@@ -86,23 +86,24 @@ Dark Reading,Security / Hacking News,https://www.darkreading.com/rss.xml
 SecurityWeek,Security / Hacking News,https://www.securityweek.com/feed/
 Help Net Security,Security / Hacking News,https://www.helpnetsecurity.com/feed/
 Infosecurity Magazine (News),Security / Hacking News,https://www.infosecurity-magazine.com/rss/news/
-CSO Online,Security / Hacking News,https://www.csoonline.com/index.rss
+CSO Online,Security / Hacking News,https://www.csoonline.com/feed/
 SANS Internet Storm Center (ISC),Security / Hacking News,https://isc.sans.edu/rssfeed.xml
 Schneier on Security,Security / Hacking News,https://www.schneier.com/feed/atom/
 HackRead,Security / Hacking News,https://www.hackread.com/feed/
 The Daily Swig (PortSwigger),Security / Hacking News,https://portswigger.net/daily-swig/rss
 Exploit Database,Security / Hacking News,https://www.exploit-db.com/rss.xml
-Packet Storm,Security / Hacking News,https://packetstormsecurity.com/feeds/
-Naked Security (Sophos),Security / Hacking News,https://nakedsecurity.sophos.com/feed/
+Threatpost,Security / Hacking News,https://threatpost.com/feed/
+Sophos News - Serious Security,Security / Hacking News,https://news.sophos.com/en-us/category/serious-security/feed/
 CISA (US-CERT Alerts),Security / Hacking News,https://www.cisa.gov/uscert/ncas/alerts.xml
-IBM Security Intelligence,Security / Hacking News,https://securityintelligence.com/feed/
+Microsoft Security Blog,Security / Hacking News,https://www.microsoft.com/en-us/security/blog/feed/
 Mandiant (Blog),Security / Hacking News,https://www.mandiant.com/resources/blog/rss.xml
-Trend Micro (Security News),Security / Hacking News,https://www.trendmicro.com/vinfo/us/security/news/rss
+Cisco Talos Intelligence,Security / Hacking News,https://blog.talosintelligence.com/feed/
 TechCrunch (Security Tag),Security / Hacking News,https://techcrunch.com/tag/security/feed/
 ZDNet (Security),Security / Hacking News,https://www.zdnet.com/topic/security/rss.xml
 Wired (Security),Security / Hacking News,https://www.wired.com/feed/category/security/latest/rss
 Tech in Asia » China,Chinese Media,https://techinasia.com/tag/china/feed
-ChinaTechNews.com,Chinese Media,https://chinatechnews.com/feed
+TechNode (China Tech),Chinese Media,https://technode.com/feed/
 Pandaily,Chinese Media,https://pandaily.com/feed
 PingWest (English),Chinese Media,https://en.pingwest.com/feed
-CnEVPost,Chinese Media,https://cnevpost.com/rss-feed/
+InsideEVs,Automotive & EV,https://insideevs.com/rss/category/news/
+

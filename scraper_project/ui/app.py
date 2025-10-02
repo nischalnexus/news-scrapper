@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import asyncio
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 import sys
 import json
@@ -18,7 +18,7 @@ import pandas as pd
 import streamlit as st
 
 from scraper_project.config import load_settings
-from scraper_project.pipeline.runner import ingest_async
+from scraper_project.pipeline.runner import ingest_async, filter_items_by_hours
 from scraper_project.utils.async_tools import ensure_proactor_event_loop_policy
 from scraper_project.pipeline.storage import load_dataframe, write_items
 from scraper_project.models import SourceConfig
@@ -266,12 +266,10 @@ def _render_catalog_manager(catalog_df: pd.DataFrame, catalog_path: Optional[str
     else:
         st.info("No categories defined yet.")
 
-def _ingest_and_store(cfg, ingest_hours: int) -> None:
+def _ingest_and_store(cfg, ingest_hours: float) -> None:
     ensure_proactor_event_loop_policy()
     items = asyncio.run(ingest_async(cfg))
-    if ingest_hours:
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=ingest_hours)
-        items = [item for item in items if not item.published_at or item.published_at >= cutoff]
+    items = filter_items_by_hours(items, ingest_hours) if ingest_hours else items
     write_items(items, cfg.storage)
 
 st.set_page_config(page_title="Open Scraper Dashboard", layout="wide")
@@ -728,6 +726,7 @@ with predictive_tab:
                 )
             else:
                 st.dataframe(digest_display, width='stretch', hide_index=True)
+
 
 
 

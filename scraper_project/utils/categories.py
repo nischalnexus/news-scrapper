@@ -159,6 +159,8 @@ def normalize_url(url: str) -> str:
         parsed = urlparse(value)
     if not parsed.netloc:
         return value
+    if parsed.path and parsed.path != "/":
+        return value
     return value.rstrip("/")
 
 
